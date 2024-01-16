@@ -1,14 +1,13 @@
 import xlmiddle from '../../assets/xs/xl-middle.svg'
 import xrbottom from '../../assets/xs/xr-bottom.svg'
 import xrtop from '../../assets/xs/xr-top.svg'
-import logo from '../../assets/logo.svg'
-import download from '../../assets/downloadicon.svg'
 import exodia from '../../assets/exodia.svg'
 import forums from '../../assets/forums.svg'
+import Topsect from '../../Componets/Topsect'
 
 function Home() {
   return (
-    <div className=" h-screen w-full ">
+    <div className=" h-screen w-full scr ">
 {/* X blured */}
 <div>
     <img className='absolute top-60 right-96 bg-transparent' src={xrtop} alt="x" />
@@ -18,13 +17,10 @@ function Home() {
 
 
 {/* Top section */}
-<div className='w-full p-10 flex justify-between bg-transparent'>
-<img className='h-10' src={logo} alt="" />
-<button className='h-8 w-40 bg-white rounded-xl flex justify-evenly p-1 font-semibold'>Brouser <img  className='bg-transparent' src={download} alt="" /></button>
-</div>
+<Topsect />
 
 {/* left Navbar secton */}
-<div className='fixed w-96 top-96 -left-32 h-10 flex text-[#9329FE] align-middle font-Inter font-bold text-2xl -rotate-90 gap-8'>
+<div className='fixed hidden max-sm:w-96 top-96 -left-32 h-10 flex text-[#9329FE] align-middle font-Inter font-medium  text-2xl -rotate-90 gap-8 cursor-pointer'>
 <p className='hover:underline'>Contact</p>
 <p className='hover:underline'>Mentors</p>
 <p className='hover:underline'>Stacks</p>

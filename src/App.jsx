@@ -3,7 +3,7 @@ import Home from "./pages/Home/Home"
 function App() {
 
   return (
-   <div className="min-h-screen">
+   <div className="min-h-screen ">
      <Home />
    </div>
   )
