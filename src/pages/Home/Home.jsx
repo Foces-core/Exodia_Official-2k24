@@ -1,8 +1,14 @@
 import xlmiddle from '../../assets/xs/xl-middle.svg'
 import xrbottom from '../../assets/xs/xr-bottom.svg'
 import xrtop from '../../assets/xs/xr-top.svg'
-import exodia from '../../assets/exodia.svg'
+// import exodia from '../../assets/exodia.svg'
 import forums from '../../assets/forums.svg'
+// import Atropos from 'atropos/react';
+import 'atropos/css'
+// import { Box, Text } from '@antropos-ui/core';
+// import { hover } from '@antropos-ui/core';
+
+
 
 function Home() {
   return (
@@ -17,10 +23,12 @@ function Home() {
 {/* Forums */}
    <div className='w-full flex justify-center mt-12'><img src={forums} alt="forums" /></div> 
 {/* Middle section */}
-<div className='flex mt-32 h-auto w-full justify-center'>
-<img className='' src={exodia} alt="exodia" />
-{/* Subtitle */}
-{/* Timer */}
+
+<div className='flex mt-24 h-auto w-2/4 justify-center'>
+{/* <Box className='relative theme text-[14rem]'>
+      <Text className={`absolute text-white z-10 -top-3 left-1 ${hover.scaleUp} transition-transform duration-300 ease-in-out`}>exoDia</Text>
+      <Text className={`absolute text-[#9329FE] z-0 ${hover.scaleUp} transition-transform duration-300 ease-in-out`}>exoDia</Text>
+    </Box> */}
 </div>
     </div>
   )

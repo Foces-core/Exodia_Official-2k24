@@ -1,7 +1,9 @@
 import Folder from "../../Componets/Folder"
+import PopModel from "../../Componets/PopModel"
 import stackbg from "../../assets/stack.svg"
 
 function Stacks() {
+  
   return (
     <div className=' relative h-screen w-full overflow-hidden z-0 flex justify-center items-center'>
       {/* ///////////////MID CONTENT////////////// */}
@@ -13,6 +15,7 @@ function Stacks() {
       <Folder name="Augmented Reality"/>
       <Folder name="Game Development" />
       </div>  
+      <PopModel/>
        </div>
       
       {/*////////////// BOTTOM //////////// */}
