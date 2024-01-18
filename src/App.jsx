@@ -2,6 +2,8 @@ import Topsect from "./Componets/Topsect"
 import Leftnav from "./Componets/leftnav"
 import Home from "./pages/Home/Home"
 import Stacks from "./pages/Stacks/Stacks"
+import RegisterSection from "./Componets/RegisterSection"
+import Mentors from "./pages/Mentors/Mentors"
 import './App.css';
 function App() {
 
@@ -11,6 +13,8 @@ function App() {
     <Leftnav/>
      <Home />
      <Stacks />
+     <Mentors />
+     <RegisterSection />
    </div>
   )
 }
