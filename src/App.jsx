@@ -10,7 +10,7 @@ function App() {
   return (
    <div className="min-h-screen scroll-smooth">
     <Topsect />
-    <Leftnav/>
+    {/* <Leftnav/> */}
      <Home />
      <Stacks />
      <Mentors />
