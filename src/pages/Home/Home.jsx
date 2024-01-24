@@ -5,29 +5,48 @@ import xrtop from '../../assets/xs/xr-top.svg'
 import forums from '../../assets/forums.svg'
 // import Atropos from 'atropos/react';
 import 'atropos/css'
-
+import Atropos from 'atropos/react'
+import { useCallback, useEffect } from 'react'
 
 
 function Home() {
+
+
   return (
     <div className=" h-screen w-full bg-[#151515] ">
 {/* X blured */}
 <div>
-    <img className='absolute top-60 right-96 bg-transparent' src={xrtop} alt="x" />
-    <img className='absolute top-80 left-64 bg-transparent' src={xlmiddle} alt="x" /> 
-    <img className='absolute top-96 right-14 bg-transparent' src={xrbottom} alt="x" />
+    <img className='absolute bg-transparent top-60 right-96' src={xrtop} alt="x" />
+    <img className='absolute bg-transparent top-80 left-64' src={xlmiddle} alt="x" /> 
+    <img className='absolute bg-transparent top-96 right-14' src={xrbottom} alt="x" />
 </div>
+      {/* 
+      <div className='flex justify-center w-2/4 h-auto '>
+        <div className='relative theme text-[14rem] w-fit h-fit'>
+          <p className={`absolute text-white z-10 -top-3 left-1  transition-transform duration-300 ease-in-out`}>exoDia</p>
+          <p className={`absolute text-[#9329FE] z-0  transition-transform duration-300 ease-in-out`}>exoDia</p>
+        </div> 
+      </div> */}
 
 {/* Forums */}
-   <div className='w-full flex justify-center mt-12'><img src={forums} alt="forums" /></div> 
+      <div className='flex justify-center w-full mt-12'><img src={forums} alt="forums" /></div> 
 {/* Middle section */}
 
-<div className='flex mt-24 h-auto w-2/4 justify-center'>
- <div className='relative theme text-[14rem]'>
-      <p className={`absolute text-white z-10 -top-3 left-1  transition-transform duration-300 ease-in-out`}>exoDia</p>
-      <p className={`absolute text-[#9329FE] z-0  transition-transform duration-300 ease-in-out`}>exoDia</p>
-    </div> 
-</div>
+      <div className='w-full h-[60vh] flex justify-center items-center '>  
+        <Atropos className='my-atropos' highlight={false}>
+          <div className='flex items-center justify-center w-full h-full'>
+            <div className='relative theme text-[14rem] w-[800px] h-[336px]'>
+              <p className={`absolute text-white z-10 -top-3 left-1  transition-transform duration-300 ease-in-out`} data-atropos-offset='0'>exoDia</p>
+              <p className={`absolute text-[#9329FE] z-0  transition-transform duration-300 ease-in-out`} data-atropos-offset='-3' >exoDia</p>
+            </div> 
+          </div>
+        </Atropos>
+      </div>
+
+
+
+
+
     </div>
   )
 }
