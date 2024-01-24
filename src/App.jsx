@@ -1,5 +1,5 @@
 import Topsect from "./Componets/Topsect"
-import Leftnav from "./Componets/leftnav"
+import Leftnav from "./Componets/Leftnav"
 import Home from "./pages/Home/Home"
 import Stacks from "./pages/Stacks/Stacks"
 import './App.css';

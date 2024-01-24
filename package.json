@@ -17,7 +17,7 @@
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
-    "@types/react": "^18.2.43",
+    "@types/reac": "^18.2.43",
     "@types/react-dom": "^18.2.17",
     "@vitejs/plugin-react-swc": "^3.5.0",
     "autoprefixer": "^10.4.16",
