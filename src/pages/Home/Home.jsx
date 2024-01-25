@@ -34,7 +34,7 @@ function Home() {
 
       <div className='w-full h-[60vh] flex justify-center items-center '>  
         <Atropos className='my-atropos' highlight={false}>
-          <div className='flex items-center justify-center w-full h-full text-9xl theme'>
+          <div className='flex items-center justify-center w-full h-full text-[14vw] theme'>
 
               <p className={`absolute text-white z-10 `} data-atropos-offset='0'>exoDia</p>
               <p className={`mr-2 mt-4 text-[#9329FE] `} data-atropos-offset='-3' >exoDia</p>
