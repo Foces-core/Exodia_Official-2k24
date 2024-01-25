@@ -13,7 +13,7 @@ function Home() {
 
 
   return (
-    <div className=" h-screen w-full bg-[#151515] ">
+    <div className=" h-screen w-full bg-[#151515] " id='Home'>
 {/* X blured */}
 <div>
     <img className='absolute bg-transparent top-60 right-96' src={xrtop} alt="x" />
