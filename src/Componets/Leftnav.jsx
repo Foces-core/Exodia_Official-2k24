@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 
 function Leftnav() {
-  const sectionIds = ["Mentors", "Stacks", "Home","Contacts"];
+  const sectionIds = ["Contacts","Mentors", "Stacks", "Home"];
   const [activeSection, setActiveSection] = useState(sectionIds[0]);
 
   useEffect(() => {
@@ -43,12 +43,12 @@ function Leftnav() {
           </a>
         ))}
       </div>
-      <div className="hidden fixed px-4 bottom-6 w-[90%] h-10 z-50 left-[5%]   gap-5 rounded-lg justify-center items-center right-4 bg-[#6C6C6C80] max-[768px]:flex">
+      <div className="hidden flex-row-reverse fixed px-4 bottom-6 w-[90%] h-10 z-50 left-[5%] text-white  gap-5 rounded-lg justify-center items-center right-4 bg-[#6C6C6C80] max-[768px]:flex">
         {sectionIds.map(id => (
           <a
             key={id}
             href={`#${id}`}
-            className={`hover:underline ${activeSection === id ? 'opacity-100 underline' : 'opacity-45'}`}
+            className={`hover:underline ${activeSection === id ? 'font-semibold relative before:absolute before:w-full before:h-[0.35rem] before:bg-[#9329FE] before:-bottom-4 before:rounded-xl' : 'opacity-45'}`}
             ref={React.createRef()}
           >
             {id}
