@@ -9,8 +9,8 @@ function Stacks() {
       {/* ///////////////MID CONTENT////////////// */}
        <div className="flex flex-col h-[600px] w-[900px] items-center justify-center ">
         <p className="theme text-8xl text-[#1D9D51] justify-center">STACKS</p>
-        <p className="mt- bg-[#1D9D51] rounded-lg w-96 h-8 text-white font-bold text-center text-lg">Choose your adventure !</p>
-      <div className="flex m-5 mt-20 gap-10">
+        <p className="mt-5 bg-[#1D9D51] rounded-lg w-96 h-8 text-white font-bold text-center text-lg">Choose your adventure !</p>
+      <div className="flex m-5 mt-28 gap-10">
         <Folder name="Generative AI"/>
       <Folder name="Augmented Reality"/>
       <Folder name="Game Development" />
