@@ -48,7 +48,7 @@ function Leftnav() {
           <a
             key={id}
             href={`#${id}`}
-            className={`hover:underline ${activeSection === id ? 'font-semibold relative before:absolute before:w-full before:h-[0.35rem] before:bg-[#9329FE] before:-bottom-4 before:rounded-xl' : 'opacity-45'}`}
+            className={`text-xl  max-[350px]:text-base font-medium text-white font-Inter ${activeSection === id ? ' relative before:absolute before:w-full before:h-[0.35rem] before:bg-[#9329FE] before:-bottom-4 before:rounded-xl' : 'opacity-45'}`}
             ref={React.createRef()}
           >
             {id}
