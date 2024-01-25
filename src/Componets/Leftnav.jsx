@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 
 function Leftnav() {
-  const sectionIds = ["Mentors", "Stacks", "Home"];
+  const sectionIds = ["Mentors", "Stacks", "Home","Contacts"];
   const [activeSection, setActiveSection] = useState(sectionIds[0]);
 
   useEffect(() => {
