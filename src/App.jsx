@@ -9,15 +9,18 @@ import Footer from "./Componets/Footer"
 function App() {
 
   return (
+    <>
+    
    <div className="min-h-screen scroll-smooth">
     <Topsect />
-    <Leftnav/>
      <Home />
      <Stacks />
      <Mentors />
      <RegisterSection />
-     <Footer/>
+      <Leftnav/>
+    <Footer/>
    </div>
+    </>
   )
 }
 
