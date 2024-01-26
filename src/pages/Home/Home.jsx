@@ -7,6 +7,7 @@ import forums from '../../assets/forums.svg'
 import 'atropos/css'
 import Atropos from 'atropos/react'
 import { useCallback, useEffect } from 'react'
+import Counter from '../../Componets/Counter'
 
 
 function Home() {
@@ -42,7 +43,10 @@ function Home() {
           </div>
         </Atropos>
       </div>
-
+      <div className='flex justify-center w-full'>
+        
+        <Counter/>
+      </div>
 
 
 

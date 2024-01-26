@@ -12,13 +12,13 @@ function App() {
     <>
     
    <div className="min-h-screen scroll-smooth">
-    <Topsect />
-     <Home />
-     <Stacks />
-     <Mentors />
-     <RegisterSection />
+      <Topsect />
+      <Home />
+      <Stacks />
+      <Mentors />
+      <RegisterSection />
       <Leftnav/>
-    <Footer/>
+      <Footer/>
    </div>
     </>
   )
