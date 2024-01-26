@@ -9,22 +9,23 @@ import Atropos from 'atropos/react'
 import { useCallback, useEffect } from 'react'
 import Counter from '../../Componets/Counter'
 // import rallax from 'rallax.js'
-import rolly from 'rolly.js'
-import 'rolly.js/css/style.css'
+// import rolly from 'rolly.js'
+// import 'rolly.js/dist/rolly.min.css'
+
 
 
 
 
 function Home() {
-  useEffect(() => {
+  // useEffect(() => {
     
-    const r = rolly({
-      view: document.querySelector('.appX'),
-      native: true,
-      // other options
-    });
-    r.init();
-  },[])
+  //   const target=document.querySelector('.appX1')
+  //   const parallax=rallax(target, {speed:3.0})
+  //   const target2=document.querySelector('.appX2')
+  //   const parallax2=rallax(target2, {speed:2.5})
+  //   const target3=document.querySelector('.appX3')
+  //   const parallax3=rallax(target3, {speed:2.0})
+  // },[])
 
 
 
