@@ -8,18 +8,33 @@ import 'atropos/css'
 import Atropos from 'atropos/react'
 import { useCallback, useEffect } from 'react'
 import Counter from '../../Componets/Counter'
+// import rallax from 'rallax.js'
+import rolly from 'rolly.js'
+import 'rolly.js/css/style.css'
+
+
 
 
 function Home() {
+  useEffect(() => {
+    
+    const r = rolly({
+      view: document.querySelector('.appX'),
+      native: true,
+      // other options
+    });
+    r.init();
+  },[])
+
 
 
   return (
     <div className=" h-screen w-full bg-[#151515] " id='Home'>
 {/* X blured */}
-<div>
-    <img className='absolute bg-transparent top-60 right-96' src={xrtop} alt="x" />
-    <img className='absolute bg-transparent top-80 left-64' src={xlmiddle} alt="x" /> 
-    <img className='absolute bg-transparent top-96 right-14' src={xrbottom} alt="x" />
+<div className='appX'>
+    <img data-scene className='absolute bg-transparent top-60 right-96 appX1' src={xrtop} alt="x" />
+    <img data-scene className='absolute bg-transparent top-80 left-64 appX2' src={xlmiddle} alt="x" /> 
+    <img data-scene className='absolute bg-transparent top-96 right-14 appX3' src={xrbottom} alt="x" />
 </div>
       {/* 
       <div className='flex justify-center w-2/4 h-auto '>

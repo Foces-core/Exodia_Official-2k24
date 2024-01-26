@@ -6,7 +6,10 @@ import RegisterSection from "./Componets/RegisterSection"
 import Mentors from "./pages/Mentors/Mentors"
 import './App.css';
 import Footer from "./Componets/Footer"
+import 'aos/dist/aos.css';
+import AOS from 'aos'
 function App() {
+  AOS.init()
 
   return (
     <>

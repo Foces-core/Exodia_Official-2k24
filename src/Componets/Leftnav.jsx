@@ -38,6 +38,7 @@ function Leftnav() {
             key={id}
             className={`hover:before:bg-[#9329FE]  relative before:absolute before:w-full before:h-[0.35rem]  before:-bottom-1 before:rounded-xl  ${activeSection === id ? 'opacity-100  before:bg-[#9329FE]' : 'opacity-45 before:bg-transparent'}`}
             ref={React.createRef()}
+            onClick={() => document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })}
           >
             {id}
           </p>
@@ -46,13 +47,14 @@ function Leftnav() {
 
       <div className="hidden  flex-row-reverse sticky px-4 bottom-6 w-[90%] h-10 left-[5%] text-white  gap-5 rounded-lg justify-center items-center right-4 bg-[#6C6C6C80] max-[768px]:flex">
         {sectionIds.map(id => (
-          <a
+          <p
             key={id}
             className={`text-xl  max-[350px]:text-base font-medium text-white font-Inter ${activeSection === id ? ' relative before:absolute before:w-full before:h-[0.35rem] before:bg-[#9329FE] before:-bottom-4 before:rounded-xl' : 'opacity-45'}`}
             ref={React.createRef()}
+            onClick={() => document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })}
           >
             {id}
-          </a>
+          </p>
         ))}
         
       </div>
