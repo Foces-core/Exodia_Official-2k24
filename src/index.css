@@ -20,13 +20,17 @@ body{
 }
 
 .my-atropos {
-    width: 60vw;
+    width: 70vw;
     height:30vh;
     background: transparent;
     position: relative;
+  }
+  @media screen and (max-width: 600px){
+    .my-atropos {
+      width: 100vw;
+      height: 30vw;
+    }
     
-
-
   }
   @layer utilities {
     /* Hide scrollbar for Chrome, Safari and Opera */

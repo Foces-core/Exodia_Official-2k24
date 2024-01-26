@@ -3,7 +3,6 @@ import xrbottom from '../../assets/xs/xr-bottom.svg'
 import xrtop from '../../assets/xs/xr-top.svg'
 // import exodia from '../../assets/exodia.svg'
 import forums from '../../assets/forums.svg'
-// import Atropos from 'atropos/react';
 import 'atropos/css'
 import Atropos from 'atropos/react'
 import { useCallback, useEffect } from 'react'
@@ -46,22 +45,23 @@ function Home() {
       </div> */}
 
 {/* Forums */}
-      <div className='flex justify-center w-full mt-12'><img src={forums} alt="forums" /></div> 
+      <div className='flex justify-center w-full mt-12 '><img className='max-sm:w-40 max-sm:mt-60' src={forums} alt="forums" /></div> 
 {/* Middle section */}
 
-      <div className='w-full h-[60vh] flex justify-center items-center '>  
+      <div className='w-full h-[60vh] flex justify-center items-center max-sm:-mt-60 '>  
         <Atropos className='my-atropos' highlight={false}>
-          <div className='flex items-center justify-center w-full h-full text-[14vw] theme'>
+          <div className='flex items-center justify-center w-full h-full text-[15vw] theme max-sm:text-[24vw] '>
 
               <p className={`absolute text-white z-10 `} data-atropos-offset='0'>exoDia</p>
               <p className={`mr-2 mt-4 text-[#9329FE] `} data-atropos-offset='-3' >exoDia</p>
 
           </div>
+          <div className={`h-5 w-full text-lg text-white theme`} data-atropos-offset='0'>ALL KERALA TECHNICAL LEARNING GALA</div>
         </Atropos>
       </div>
-      <div className='flex justify-center w-full'>
-        
+      <div className='flex flex-col -mt-16 items-center w-full max-sm:mt-12'>
         <Counter/>
+      <button className='flex bg-red-700 w-72 h-10 rounded-lg justify-center items-center text-white text-lg font-bold mt-10 ease-in duration-100 hover:scale-105 max-sm:w-[90%] max-sm:mt-40'>Register</button>
       </div>
 
 

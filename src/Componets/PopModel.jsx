@@ -29,7 +29,7 @@ export default function PopModel() {
         </Transition.Child>
 
         <div className="fixed inset-0 z-10 w-screen overflow-y-auto ">
-          <div className="flex items-end justify-center min-h-full p-4 text-center sm:items-center sm:p-0">
+          <div className="flex items-center justify-center min-h-full p-4 text-center sm:items-center sm:p-0">
             <Transition.Child
               as={Fragment}
               enter="ease-out duration-300"
@@ -59,8 +59,8 @@ export default function PopModel() {
                         <div className='w-2/3 p-5 mt-6 overflow-y-scroll text-white rounded-lg col h-3/4 no-scrollbar bg-neutral-950 max-sm:text-xs scroll-smooth max-[640px]:w-fit max-[640px]:p-3 max-[640px]:max-w-[85%]'>
                         {stackData && stackData.Details && stackData.Details[stackName] ? (
                           stackData.Details[stackName].map((item, index) => (
-                            <div key={index} className='flex px-4 py-2'>
-                              <img src={forward} alt="" />
+                            <div key={index} className='flex px-2 py-2'>
+                              <img className='max-sm:h-3' src={forward} alt="" />
                               <p className='ml-4'>{item}</p>
                             </div>
                           ))

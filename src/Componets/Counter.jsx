@@ -6,8 +6,8 @@ function Counter()
     const expiryDate = new Date(2024, 0, 30); // Set the expiry date to January 30, 2024
     const { seconds, minutes, hours, days } = useTimer({ expiryTimestamp: expiryDate.getTime() });
     return(
-        <>
-        <div className="flex self-center gap-5 text-white w-fit">
+        <div className='max-sm:-mt-44'>
+        <div className="flex gap-5 text-white w-fit">
             <div className={TimerDivStyle}>
                 <p className={TimerStyle}>{days}</p>
                 <p>Days</p>
@@ -20,9 +20,13 @@ function Counter()
                 <p className={TimerStyle}>{minutes}</p>
                 <p>Min</p>
             </div>
+            <div className={TimerDivStyle}>
+                <p className={TimerStyle}>{seconds}</p>
+                <p>Sec</p>
+            </div>
 
         </div>
-        </>
+        </div>
     )
 }
 export default Counter;
