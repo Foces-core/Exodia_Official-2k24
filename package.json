@@ -15,7 +15,8 @@
     "atropos": "^2.0.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "recoil": "^0.7.7"
+    "recoil": "^0.7.7",
+    "react-scrollspy-navigation": "^1.0.3"
   },
   "devDependencies": {
     "@types/react": "^18.2.43",

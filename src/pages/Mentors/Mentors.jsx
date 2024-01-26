@@ -6,7 +6,7 @@ function Mentors() {
     return(
         <>
         {/* Screen Conatiner */}
-        <div className="relative flex  justify-center max-[768px]:items-center h-fit my-14 max-[768px]:flex-col-reverse">
+        <div className="relative flex  justify-center max-[768px]:items-center h-fit my-14 max-[768px]:flex-col-reverse" id='Mentors'>
             {/* Cards Container */}
             <div className="flex flex-col items-center gap-20 px-[15vh] max-[428px]:px-6 max-[375px]:px-2 max-[768px]:w-full max-[768px]:px-12 max-[768px]:gap-32 my-10">
                 <MentorCard Name="ASWIN DEV MP" Desc="Spark Playtime AR Competition Winner" Topic="Augmented Reality" Image={AshwinImg} Index={0}/>
