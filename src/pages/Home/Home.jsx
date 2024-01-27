@@ -33,7 +33,7 @@ function Home() {
 {/* X blured */}
 <div className='appX'>
     <img data-scene className='absolute bg-transparent top-60 right-96 appX1' src={xrtop} alt="x" />
-    <img data-scene className='absolute bg-transparent top-80 left-64 appX2' src={xlmiddle} alt="x" /> 
+    <img data-scene className='absolute bg-transparent top-80 left-64 appX2 max-[355px]:hidden' src={xlmiddle} alt="x" /> 
     <img data-scene className='absolute bg-transparent top-96 right-14 appX3' src={xrbottom} alt="x" />
 </div>
       {/* 
@@ -45,7 +45,8 @@ function Home() {
       </div> */}
 
 {/* Forums */}
-      <div className='flex justify-center w-full mt-12 '><img className='max-sm:w-40 max-sm:mt-60' src={forums} alt="forums" /></div> 
+
+      <div className='flex justify-center w-full mt-12 '><img className=' max-sm:w-40 max-sm:mt-60 max-[595px]:mb-56 max-[595px]:mt-4 max-[595px]:w-60' src={forums} alt="forums" /></div> 
 {/* Middle section */}
 
       <div className='w-full h-[60vh] flex justify-center items-center max-sm:-mt-60 '>  
@@ -59,7 +60,7 @@ function Home() {
           <div className={`h-5 w-full text-lg text-white theme`} data-atropos-offset='0'>ALL KERALA TECHNICAL LEARNING GALA</div>
         </Atropos>
       </div>
-      <div className='flex flex-col -mt-16 items-center w-full max-sm:mt-12'>
+      <div className='flex flex-col items-center w-full -mt-16 max-sm:mt-12'>
         <Counter/>
       <button className='flex bg-red-700 w-72 h-10 rounded-lg justify-center items-center text-white text-lg font-bold mt-10 ease-in duration-100 hover:scale-105 max-sm:w-[90%] max-sm:mt-40'>Register</button>
       </div>
