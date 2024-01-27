@@ -50,7 +50,7 @@ function Home() {
 {/* Middle section */}
 
       <div className='w-full h-[60vh] flex justify-center items-center max-sm:-mt-60 '>  
-        <Atropos className='my-atropos' highlight={false}>
+        <Atropos className='my-atropos' highlight={false} shadow={false}>
           <div className='flex items-center justify-center w-full h-full text-[15vw] theme max-sm:text-[24vw] '>
 
               <p className={`absolute text-white z-10 `} data-atropos-offset='0'>exoDia</p>
