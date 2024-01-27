@@ -20,7 +20,7 @@ function Loading()
       <path fill="#9329FE" d="M0.25,1H0c0,0,0-0.659,0-0.916c0.083-0.303,0.158,0.334,0.25,0C0.25,0.327,0.25,1,0.25,1z"/>
     </pattern>
     
-    <text id="text" transform="matrix(1 0 0 1 -2.0684 116.7852)" fontSize="160.047" className="theme"> exoDia</text>
+    <text id="text" transform="matrix(1 0 0 1 160.0684 10.7852)" fontSize="60.047" className="theme"> exoDia</text>
     
     <mask id="text_mask">
       <use x="0" y="0" href="#text" opacity="1" fill="#fff"/>
@@ -29,7 +29,7 @@ function Loading()
     
   <use x="0" y="0" href="#text" fill="#fff"/>
     
-  <rect className="water-fill" mask="url(#text_mask)" fill="url(#water)" x="-400" y="0" width="1600" height="120"/>
+  <rect className="water-fill" mask="url(#text_mask)" fill="url(#water)" x="10" y="100" width="1600" height="120"/>
 </svg>
     </div>
     </>
