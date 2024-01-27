@@ -22,7 +22,7 @@ function App() {
   return (
     <>
    <div className="min-h-screen scroll-smooth">
-      {<Loading/>}
+      {loading&&<Loading/>}
       <Topsect />
       <Home />
       <Stacks />
