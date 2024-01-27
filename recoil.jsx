@@ -14,3 +14,8 @@ export const stackdetails =atom ({
     key: 'stackdetails',
     default: {}
 })
+
+export const progress=atom({
+    key:'progress',
+    default: 25
+})

@@ -1,59 +1,29 @@
+import PropTypes from 'prop-types';
 
-
-// const ProgressBar = ({ value }) => {
-//   return (
-//     <div className="flex relative w-4/5 h-1  transition duration-500">
-//       <div className="absolute w-full h-full rounded-full bg-gray-300">
-//         <div
-//           className="h-full rounded-full bg-green-500 transition duration-500"
-//           style={{ width: `${value * 100}%` }}
-//         />
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default ProgressBar;
-
-import React, { useEffect, useState } from 'react';
-
-const CircularLoader = ({ size, strokeWidth, color, value }) => {
-  const radius = (size - strokeWidth) / 2;
-  const circumference = 2 * Math.PI * radius;
-  const [progress, setProgress] = useState(0);
-
-  useEffect(() => {
-    const animatedProgress = value * circumference;
-    setProgress(animatedProgress);
-  }, [value, circumference]);
-
-  const loaderStyle = {
-    width: size,
-    height: size,
-  };
+const ProgressBar = ({ value }) => {
+  const circumference = 342.441; // Adjust the circumference based on your path length
+  const dashArray = circumference;
+  const dashOffset = dashArray - (value * dashArray);
 
   return (
-    <svg
-      style={loaderStyle}
-      viewBox={`0 0 ${size} ${size}`}
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <circle
-        cx={size / 2}
-        cy={size / 2}
-        r={radius}
-        stroke={color}
-        strokeWidth={strokeWidth}
-        strokeDasharray={circumference}
-        strokeDashoffset={circumference - progress}
-        strokeLinecap="round"
-        fill="transparent"
-        transition="stroke-dashoffset 0.5s ease-in-out"
-      />
-    </svg>
+    <div className="flex relative w-4/5 h-1  transition duration-500">
+      <svg xmlns="http://www.w3.org/2000/svg" width="331" height="47" viewBox="0 0 331 47" fill="none">
+        <path opacity="0.25" d="M2.07033 1.51702C2.07033 1.51702 64.1827 45.2574 165.312 45.2574C266.441 45.2574 329.441 1.51702 329.441 1.51702" stroke="white" strokeWidth="3" strokeLinecap="round" />
+        <path
+          className="h-full rounded-full transition duration-500"
+          d="M2.07033 1.51702C2.07033 1.51702 64.1827 45.2574 165.312 45.2574C266.441 45.2574 329.441 1.51702 329.441 1.51702"
+          stroke='green'
+          strokeWidth="3"
+          strokeLinecap="round"
+          style={{ strokeDasharray: dashArray, strokeDashoffset: dashOffset }}
+        />
+      </svg>
+    </div>
   );
 };
 
-export default CircularLoader;
+ProgressBar.propTypes = {
+  value: PropTypes.number.isRequired,
+};
 
+export default ProgressBar;

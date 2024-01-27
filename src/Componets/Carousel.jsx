@@ -4,10 +4,12 @@ import 'owl.carousel/dist/assets/owl.theme.default.css';
 import Folder from './Folder';
 import"../index.css"
 import ProgressBar from './ProgressBar';
-import CircularLoader from './ProgressBar';
+import { useRecoilState } from 'recoil';
+import { progress } from '../../recoil';
 
 
 function Carousel() {
+ // const [value, setValue] = useRecoilState(progress);
     return (
       <div className='w-full slider'>
         <OwlCarousel
@@ -20,6 +22,7 @@ function Carousel() {
           touchDrag={true}
           pullDrag={true}
           dotData={true}
+
         >
           <div className='item slider-card'>
             <Folder name='Generative Ai' />
@@ -32,7 +35,7 @@ function Carousel() {
           </div>
         </OwlCarousel>
         
-        <div className=' -mt-20 flex w-full justify-center -z-20'><CircularLoader size={350} strokeWidth={5} value={0.5} color="#3498db" /></div>
+        <div className=' mt-36 flex w-full justify-center -z-20'><ProgressBar className='w-4/5' value={0.5} /></div>
       </div>  
     );
   }

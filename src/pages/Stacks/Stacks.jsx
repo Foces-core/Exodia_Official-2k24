@@ -5,7 +5,7 @@ import data from '../../Data.json';
 import { useRecoilState } from 'recoil';
 import { stackdetails } from '../../../recoil';
 import Carousel from '../../Componets/Carousel';
-import ProgressBar from '../../Componets/ProgressBar';
+import { Progress } from '@material-tailwind/react';
 
 function Stacks() {
   const [stackData, setStackData] = useRecoilState(stackdetails);
@@ -33,7 +33,6 @@ function Stacks() {
           )}
         </div> */}
         <div className='flex flex-col mt-5 h-fit items-center'> <Carousel/>
-        
         </div>
         <PopModel />
       </div>

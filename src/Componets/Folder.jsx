@@ -5,8 +5,6 @@ import file from "../assets/folder/file.svg"
 import { popup ,stack} from "../../recoil"
 function Folder(props) {
   const [open, setOpen] = useRecoilState(popup)
- const [stackName, setStackName] = useRecoilState(stack)
-
 
   const Setvalues = () => {
     setStackName(props.name)
