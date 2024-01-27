@@ -43,3 +43,71 @@ body{
         scrollbar-width: none;  /* Firefox */
   }
 }
+@keyframes scale {
+    0% {
+      transform: scale(0.9);
+      opacity: 0.5;
+    }
+    100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+  
+
+  
+  .item {
+    animation: scale 0.3s ease-in-out, blur 0.3s ease-in-out, fade 0.3s ease-in-out;
+    transform-origin: center center;
+  }@keyframes scaleUp {
+    0% {
+      transform: scale(0.9);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+  
+.slider {
+    margin-bottom: 30px;
+    position: relative;
+  }
+  .slider .owl-item.active.center .slider-card {
+    transform: scale(1.4);
+    margin-top: 40%;
+    opacity: 1;
+    color: #fff;
+    filter: blur(0px);
+    cursor: pointer;
+  }
+  .slider-card {
+    
+    padding: 0px 0px;
+    margin: 50px 10px 50px 15px;
+    cursor: disabled;
+    transform: scale(1);
+    filter: blur(3px);
+    opacity: 0.5;
+    transition: all 0.3s;
+  }
+  .slider-card img {
+    border-radius: 5px 5px 0px 0px;
+  }
+  .owl-nav .owl-prev {
+    position: absolute;
+    top: calc(50% - 25px);
+    left: 0;
+    opacity: 1;
+    font-size: 30px !important;
+    z-index: 1;
+
+  }
+  .owl-nav .owl-next {
+    position: absolute;
+    top: calc(50% - 25px);
+    right: 0;
+    opacity: 1;
+    font-size: 30px !important;
+    z-index: 1;
+    filter: blur(5px);
+  }

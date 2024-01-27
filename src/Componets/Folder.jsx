@@ -16,12 +16,12 @@ function Folder(props) {
   return (
 
 <div onClick={Setvalues}>
-    <div className="relative flex justify-end items-end scale-75 cursor-pointer group">
-    <img className="absolute -top-9 z-10 transition-transform transform group-hover:scale-110" src={coverback} alt="file" />
-    <img className="absolute z-20 origin-bottom-right transition-transform transform group-hover:rotate-12" src={file} alt="file" />
-    <img className="z-30 transition-transform transform group-hover:scale-110" src={coverfront} alt="file" />
+    <div className=" relative flex justify-end items-end scale-75 cursor-pointer group max-md:scale-[0.6]">
+    <img className="absolute -top-9 z-10 transition-transform transform group-hover:scale-110 max-md:-top-7" src={coverback} alt="file" />
+    <img className="absolute z-20  scale-90 origin-bottom-right transition-transform transform group-hover:rotate-12  max-md:scale-95" src={file} alt="file" />
+    <img className="z-30 transition-transform transform group-hover:scale-110 max-md:scale-10" src={coverfront} alt="file" />
   </div>
-  <p className="text-white text-center font-semibold">{props.name}</p>
+  <p className="text-white text-center font-semibold max-sm:text-xs">{props.name}</p>
   </div>
   
   )
