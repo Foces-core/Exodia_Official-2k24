@@ -94,7 +94,7 @@ body{
   }
   .slider .owl-item.active.center .slider-card {
     transform: scale(1.4);
-    margin-top: 40%;
+    margin-top: 45%;
     opacity: 1;
     color: #fff;
     filter: blur(0px);

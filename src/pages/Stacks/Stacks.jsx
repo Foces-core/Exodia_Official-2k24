@@ -5,7 +5,7 @@ import data from '../../Data.json';
 import { useRecoilState } from 'recoil';
 import { stackdetails } from '../../../recoil';
 import Carousel from '../../Componets/Carousel';
-import { Progress } from '@material-tailwind/react';
+
 
 function Stacks() {
   const [stackData, setStackData] = useRecoilState(stackdetails);
@@ -20,9 +20,9 @@ function Stacks() {
   return (
     <div className="relative z-0 flex items-center justify-center w-full h-screen overflow-hidden" id="Stacks">
       {/* ///////////////MID CONTENT////////////// */}
-      <div className="flex flex-col h-[600px] w-[900px] items-center  ">
-        <p className="theme text-8xl text-[#1D9D51] justify-center max-md:text-5xl">STACKS</p>
-        <p className="mt-5 bg-[#1D9D51] rounded-lg text-white font-bold text-center text-lg max-sm:text-sm h-5 w-64 rounded-md font-medium sm:h-8 w-72">Choose your adventure !</p>
+      <div className="flex flex-col h-[600px] w-[900px] items-center justify-center  ">
+        <p className="theme text-8xl text-[#1D9D51] justify-center max-md:text-4xl">STACKS</p>
+        <p className="mt-5 bg-[#1D9D51] rounded-lg text-white font-bold text-center text-lg max-sm:text-sm h-5 w-64 rounded-md font-medium sm:h-8 w-52">Choose your adventure !</p>
         {/* <div className="flex m-5 mt-28 gap-10">
           {stackData && stackData.Stack_name ? (
             stackData.Stack_name.map((item) => (
@@ -32,14 +32,14 @@ function Stacks() {
             <p>loading</p>
           )}
         </div> */}
-        <div className='flex flex-col mt-5 h-fit items-center'> <Carousel/>
+        <div className='flex flex-col mt-5 h-fit items-center max-md:w-full'> <Carousel/>
         </div>
         <PopModel />
       </div>
 
       {/*////////////// BOTTOM //////////// */}
       <div>
-        <img className="absolute top-[450px] left-40 scale-150 -z-10" src={stackbg} alt="" />
+        <img className="absolute top-[450px] left-40 scale-150 -z-10 max-md:top-44 left-10" src={stackbg} alt="" />
       </div>
     </div>
   );

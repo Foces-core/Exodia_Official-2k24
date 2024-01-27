@@ -5,6 +5,7 @@ const ProgressBar = ({ value }) => {
   const dashArray = circumference;
   const dashOffset = dashArray - (value * dashArray);
 
+
   return (
     <div className="flex relative w-4/5 h-1  transition duration-500">
       <svg xmlns="http://www.w3.org/2000/svg" width="331" height="47" viewBox="0 0 331 47" fill="none">

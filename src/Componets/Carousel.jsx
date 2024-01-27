@@ -2,43 +2,59 @@ import OwlCarousel from 'react-owl-carousel';
 import 'owl.carousel/dist/assets/owl.carousel.css';  
 import 'owl.carousel/dist/assets/owl.theme.default.css';  
 import Folder from './Folder';
-import"../index.css"
+import "../index.css";
 import ProgressBar from './ProgressBar';
-import { useRecoilState } from 'recoil';
-import { progress } from '../../recoil';
-
+import { progress, progressSelector } from '../../recoil';
+import { useRecoilState, useRecoilValue } from 'recoil';
 
 function Carousel() {
- // const [value, setValue] = useRecoilState(progress);
-    return (
-      <div className='w-full slider'>
-        <OwlCarousel
-          className='flex relative '  // Add Tailwind CSS classes for styling
-          loop={false}
-          center={true}
-          items={3}
-          slideBy={1}
-          mouseDrag={true}
-          touchDrag={true}
-          pullDrag={true}
-          dotData={true}
+  const value = useRecoilValue(progressSelector);
+  const [selectedIndex, setSelectedIndex] = useRecoilState(progress);
 
-        >
-          <div className='item slider-card'>
-            <Folder name='Generative Ai' />
-          </div>
-          <div className='item slider-card'>
-            <Folder name='Augmented Reality'/>
-          </div>
-          <div className='item slider-card'>
-            <Folder name='Game Development'/>
-          </div>
-        </OwlCarousel>
-        
-        <div className=' mt-36 flex w-full justify-center -z-20'><ProgressBar className='w-4/5' value={0.5} /></div>
-      </div>  
-    );
-  }
-  
+  const handleDrag = (event) => {
+    const newIndex = event.item.index;
+    console.log("Selected Index:", newIndex);
+    setSelectedIndex(newIndex);
+    // Do something with the new index value
+  };
 
-export default Carousel
+  const updateProgressBar = () => {
+    const end = selectedIndex + 1; // Assuming selectedIndex starts from 0
+    const rate = Math.min(end / 3, 1); // Assuming 3 items in the carousel
+    console.log("Rate:", rate);
+    return rate; // Convert to percentage
+  };
+
+  return (
+    <div className='w-full slider'>
+      <OwlCarousel
+        className='flex relative'
+        loop={false}
+        center={true}
+        items={3}
+        slideBy={1}
+        mouseDrag={true}
+        touchDrag={true}
+        startPosition={0}
+        onChanged={updateProgressBar}
+        // onDrag={handleDrag}
+      >
+        <div className='item slider-card'>
+          <Folder name='Generative Ai' />
+        </div>
+        <div className='item slider-card'>
+          <Folder name='Augmented Reality'/>
+        </div>
+        <div className='item slider-card'>
+          <Folder name='Game Development'/>
+        </div>
+      </OwlCarousel>
+      
+      <div className='flex w-full justify-center -z-20'>
+        <ProgressBar value={value} />
+      </div>
+    </div>  
+  );
+}
+
+export default Carousel;
