@@ -10,6 +10,7 @@ import 'aos/dist/aos.css';
 import AOS from 'aos'
 import Loading from "./Componets/Loading"
 import { useState,useEffect } from "react"
+import FAQ from "./pages/FAQ/FAQ.jsx"
 
 function App() {
   
@@ -21,13 +22,14 @@ function App() {
 
   return (
     <>
-   <div className="min-h-screen scroll-smooth">
       {loading&&<Loading/>}
+   <div className="min-h-screen scroll-smooth">
       <Topsect />
       <Home />
       <Stacks />
       <Mentors />
       <RegisterSection />
+      <FAQ/>
       <Leftnav/>
       <Footer/>
    </div>

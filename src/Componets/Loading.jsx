@@ -12,7 +12,7 @@ function Loading()
       },[]);
     return(
     <>
-    <div className="absolute z-50 flex items-center justify-center w-full h-[110%] bg-[#151515]">
+    <div className="absolute z-50 flex pl-10 max-[350px]:pl-5 items-center justify-center w-full h-[150%] bg-[#151515]">
     <svg className="loading" version="1.1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
      width="560.558px" height="190px" viewBox="0 0 575.558 120" enableBackground="new 0 0 575.558 120" xmlSpace="preserve">
   <defs>
