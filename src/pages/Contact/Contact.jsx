@@ -13,7 +13,7 @@ function Contact()
                 </div>
                 <div className="w-[33%] h-full bg-black flex flex-col p-6 justify-end text-white relative overflow-hidden max-[700px]:w-full max-[700px]:h-[50%] "> 
                     <p className="py-5 text-xl font-bold text-[#1D9D51] max-[1360px]:text-xl text-nowrap max-[1130px]:text-lg ">Point of Contact</p>
-                    <p className="flex items-center gap-1 md:text-sm"><AiOutlinePhone/>+91-9744184806,+91-9447351280</p>
+                    <p className="flex items-center gap-2 md:text-sm"><AiOutlinePhone/>+91-9744184806,+91-9447351280</p>
                     <p className="flex items-center gap-2 md:text-sm"><AiOutlinePhone/>+91-7034721200,+91-9526055034</p>
                     <p className="flex items-center gap-2 md:text-sm"><CiMail/>exodiacec@gmail.com</p>
                     <p className="absolute text-white text-[9rem] theme top-0 max-[1360px]:text-9xl max-[1211px]:text-7xl max-[1211px]:left-[40%]  max-[700px]:hidden">exoDia</p>

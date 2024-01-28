@@ -49,7 +49,7 @@ function Leftnav() {
         {sectionIds.map(id => (
           <p
             key={id}
-            className={`text-xl  max-[350px]:text-sm font-medium text-white font-Inter z ${activeSection === id ? ' relative before:absolute before:w-full before:h-[0.35rem] before:bg-[#9329FE] before:z-0 before:-bottom-4 before:rounded-xl' : 'opacity-45'}`}
+            className={`text-xl  max-[350px]:text-sm font-medium text-white font-Inter  ${activeSection === id ? ' relative before:absolute before:w-full before:h-[0.35rem] before:bg-[#9329FE] before:z-0 before:-bottom-4 before:rounded-xl' : 'opacity-45'}`}
             ref={React.createRef()}
             onClick={() => document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })}
           >
