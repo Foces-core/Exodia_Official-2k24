@@ -11,6 +11,7 @@ import Scope from "./Componets/Scope.jsx";
 import Culturals from "./Componets/Culturals.jsx";
 import Leftnav from "./Componets/Leftnav";
 import Footer from "./Componets/Footer";
+import Contact from "./pages/Contact/Contact.jsx";
 
 const ChildComponent = () => {
   return (
@@ -24,6 +25,7 @@ const ChildComponent = () => {
       <Mentors />
       <RegisterSection />
       <FAQ />
+      <Contact />
       <Leftnav />
       <Footer />
     </div>
