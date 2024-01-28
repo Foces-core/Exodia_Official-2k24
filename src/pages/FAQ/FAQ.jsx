@@ -61,7 +61,7 @@ function FAQ()
         </AccordionBody>
       </Accordion>
     </div>
-    <img src={FAQimg} alt="" className='absolute w-full h-[90%] bottom-0 z-0'/>
+    <img src={FAQimg} alt="" className='absolute w-full h-[70%] bottom-2 z-0'/>
     </div>
     </>)
 }
