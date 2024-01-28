@@ -13,14 +13,15 @@ export default function PopModel() {
   const cancelButtonRef = useRef(null);
   const [delays, setDelays] = useState([]);
   const [showImage, setShowImage] = useState([]);
+  const timeoutIds = useRef([]);
+
 
   useEffect(() => {
     if (stackData && stackData.Details && stackData.Details[stackName]) {
       let cumulativeDelay = 0;
       const newDelays = stackData.Details[stackName].map((item) => {
-        const delay = cumulativeDelay;
-        cumulativeDelay += item.length * 5 + 700; // Adjust the multiplier according to your typeSpeed
-        return delay;
+        cumulativeDelay += item.length * 5 + 500; // Adjust the multiplier according to your typeSpeed
+        return cumulativeDelay;
       });
       setDelays(newDelays);
       setShowImage(new Array(stackData.Details[stackName].length).fill(false));
@@ -29,14 +30,19 @@ export default function PopModel() {
 
   useEffect(() => {
     delays.forEach((delay, index) => {
-      setTimeout(() => {
+      const id = setTimeout(() => {
         setShowImage((prevShowImage) => {
           const newShowImage = [...prevShowImage];
           newShowImage[index] = true;
           return newShowImage;
         });
       }, delay);
+      timeoutIds.current.push(id);
     });
+
+    return () => {
+      timeoutIds.current.forEach((id) => clearTimeout(id));
+    };
   }, [delays]);
 
   return (
@@ -103,26 +109,25 @@ export default function PopModel() {
                           </div>
                         </div>
                         <div className="w-2/3 p-5 mt-6 overflow-y-scroll text-white rounded-lg col h-3/4 no-scrollbar bg-neutral-950 max-sm:text-xs scroll-smooth max-[640px]:w-fit max-[640px]:p-3 max-[640px]:max-w-[85%]">
-                          {stackData &&
-                          stackData.Details &&
-                          stackData.Details[stackName] ? (
-                            stackData.Details[stackName].map((item, index) => (
-                              <div key={index} className="flex px-2 py-2 text-left gap-1">
-                                {showImage[index] && (
-                                  <img
-                                    className="max-sm:h-3"
-                                    src={forward}
-                                    alt=""
-                                  />
-                                )}
-                                <ReactTyped
-                                  strings={[item]}
-                                  typeSpeed={5}
-                                  startDelay={delays[index]}
-                                  showCursor={false}
-                                />
-                              </div>
-                            ))
+                          {stackData && stackData.Details && stackData.Details[stackName] ? (
+    stackData.Details[stackName].map((item, index) => (
+      <div key={index} className="flex px-2 py-2 text-left gap-1">
+        {showImage[index] && (
+          <img
+            className="max-sm:h-3"
+            src={forward}
+            alt=""
+          />
+        )}
+        <ReactTyped
+          strings={[item]}
+          typeSpeed={5}
+          startDelay={delays[index]}
+          onComplete={() => handleTypedComplete(index)}
+          showCursor={false}
+        />
+      </div>
+    ))
                           ) : (
                             <p className="animate-pulse">$</p>
                           )}
