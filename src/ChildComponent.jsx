@@ -1,5 +1,5 @@
 // ChildComponent.jsx
-
+import React from "react";
 import Topsect from "./Componets/Topsect";
 import Home from "./pages/Home/Home";
 import Stacks from "./pages/Stacks/Stacks";
@@ -14,7 +14,7 @@ import Footer from "./Componets/Footer";
 
 const ChildComponent = () => {
   return (
-    <div>
+    <div className="min-h-screen scroll-smooth">
       <Topsect />
       <Home />
       <About />
