@@ -1,13 +1,10 @@
 import React, { useRef, memo } from 'react';
+import PropTypes from 'prop-types';
 import OwlCarousel from 'react-owl-carousel';  
 import 'owl.carousel/dist/assets/owl.carousel.css';  
 import 'owl.carousel/dist/assets/owl.theme.default.css';  
 import Folder from './Folder';
 import "../index.css";
-import ProgressBar from './ProgressBar';
-import { progress } from '../../recoil';
-import { useRecoilValue } from 'recoil';
-
 
 const Carousel = memo(({ onValueChange }) => {
   const currentIndexRef = useRef(0);
@@ -48,6 +45,12 @@ const Carousel = memo(({ onValueChange }) => {
       </OwlCarousel>
     </div>
   );
-})
+});
+
+Carousel.displayName = 'Carousel';
+
+Carousel.propTypes = {
+  onValueChange: PropTypes.func.isRequired,
+};
 
 export default Carousel;
