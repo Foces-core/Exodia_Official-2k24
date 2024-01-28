@@ -26,12 +26,12 @@ function FAQ()
     const AccordianBodyStyle='text-white p-2'
 
     return(<>
-    <div className='flex flex-col items-center justify-center h-screen w-full gap-3 p-5 '>
+    <div className='flex flex-col items-center justify-center w-full h-screen gap-3 p-5 '>
         <p className='text-5xl text-white theme'>FAQ</p>
-    <div className=' mt-5 w-3/4'>
+    <div className='w-3/4 mt-5 '>
     
         
-    <Accordion open={open === 1} icon={<Icon id={1} open={open} />} className={AccordianStyle}>
+    <Accordion open={open === 1} icon={<Icon id={1} open={open} />} className={AccordianStyle} data-aos='fade-up' data-aos-duration={250}> 
         <AccordionHeader onClick={() => handleOpen(1)} className={AccordianHeaderStyle}>What is Material Tailwind?</AccordionHeader>
         <AccordionBody className={AccordianBodyStyle}>
           We&apos;re not always in the position that we want to be at. We&apos;re constantly
@@ -39,7 +39,7 @@ function FAQ()
           ourselves and actualize our dreams.
         </AccordionBody>
       </Accordion>
-      <Accordion open={open === 2} icon={<Icon id={2} open={open} />} className={AccordianStyle}>
+      <Accordion open={open === 2} icon={<Icon id={2} open={open} />} className={AccordianStyle} data-aos='fade-up' data-aos-duration={250} data-aos-delay={250}>
         <AccordionHeader onClick={() => handleOpen(2)} className={AccordianHeaderStyle}>
           How to use Material Tailwind?
         </AccordionHeader>
@@ -49,7 +49,7 @@ function FAQ()
           ourselves and actualize our dreams.
         </AccordionBody>
       </Accordion>
-      <Accordion open={open === 3} icon={<Icon id={3} open={open} />} className={AccordianStyle}>
+      <Accordion open={open === 3} icon={<Icon id={3} open={open} />} className={AccordianStyle} data-aos='fade-up' data-aos-duration={250} data-aos-delay={500}>
         <AccordionHeader onClick={() => handleOpen(3)} className={AccordianHeaderStyle}>
           What can I do with Material Tailwind?
         </AccordionHeader>

@@ -1,21 +1,38 @@
-import { Fragment, useRef} from 'react'
-import { Dialog, Transition } from '@headlessui/react'
-import logo from '../assets/logo.svg'
-import forward from '../assets/forward.svg'
-import { useRecoilState, useRecoilValue } from 'recoil'
-import { popup ,stack,stackdetails} from '../../recoil'
+import { Fragment, useRef, useEffect, useState } from "react";
+import { Dialog, Transition } from "@headlessui/react";
+import logo from "../assets/logo.svg";
+import forward from "../assets/forward.svg";
+import { useRecoilState, useRecoilValue } from "recoil";
+import { popup, stack, stackdetails } from "../../recoil";
+import { ReactTyped } from "react-typed";
+
 export default function PopModel() {
-  const [open, setOpen] = useRecoilState(popup)
+  const [open, setOpen] = useRecoilState(popup);
   const stackName = useRecoilValue(stack);
   const stackData = useRecoilValue(stackdetails);
-  const cancelButtonRef = useRef(null)
-  console.log(stackData?.Details?.[stackName]);
-   
-  
+  const cancelButtonRef = useRef(null);
+  const [delays, setDelays] = useState([]);
+
+  useEffect(() => {
+    if (stackData && stackData.Details && stackData.Details[stackName]) {
+      let cumulativeDelay = 0;
+      const newDelays = stackData.Details[stackName].map((item) => {
+        const delay = cumulativeDelay;
+        cumulativeDelay += item.length * 5 + 500; // Adjust the multiplier according to your typeSpeed
+        return delay;
+      });
+      setDelays(newDelays);
+    }
+  }, [stackData, stackName]);
 
   return (
     <Transition.Root show={open} as={Fragment}>
-      <Dialog as="div" className="relative z-10 " initialFocus={cancelButtonRef} onClose={setOpen}>
+      <Dialog
+        as="div"
+        className="relative z-10 "
+        initialFocus={cancelButtonRef}
+        onClose={setOpen}
+      >
         <Transition.Child
           as={Fragment}
           enter="ease-out duration-200"
@@ -43,31 +60,56 @@ export default function PopModel() {
                 <div className="pt-2 ">
                   <div className="sm:flex sm:items-start">
                     <div className="flex flex-col w-full mt-3 text-center sm:mt-0 sm:text-left">
-                      <div className='flex'>
+                      <div className="flex">
                         <div className="flex items-center justify-center flex-shrink-0 w-10 h-10 mx-auto sm:mx-0 sm:h-10 sm:w-10">
-                          <img className='scale-75' src={logo} alt="logo" />
+                          <img className="scale-75" src={logo} alt="logo" />
                         </div>
-                        <Dialog.Title as="h3" className="flex justify-between w-full px-3 text-base font-semibold leading-9 text-white">
-                          <p>Choose your adventure !</p><p onClick={() => setOpen(false)} className='cursor-pointer theme'>x</p>
+                        <Dialog.Title
+                          as="h3"
+                          className="flex justify-between w-full px-3 text-base font-semibold leading-9 text-white"
+                        >
+                          <p>Choose your adventure !</p>
+                          <p
+                            onClick={() => setOpen(false)}
+                            className="cursor-pointer theme"
+                          >
+                            x
+                          </p>
                         </Dialog.Title>
                       </div>
                       <div className="relative flex flex-col items-center w-full mt-2 h-96 bg-zinc-900">
-                        <div className='relative'>
-                          <p className="pt-4 text-4xl text-white col theme max-[640px]:text-2xl max-[350px]:text-xl">{stackName}</p>
-                          <div className='absolute top-2 -right-12 h-5 w-12 bg-[#9329FE] rounded-full'><p className='font-semibold text-[7px] text-center\ text-white transition-transform translate-y-1'>filing fast</p></div>
+                        <div className="relative">
+                          <p className="pt-4 text-4xl text-white col theme max-[640px]:text-2xl max-[350px]:text-xl">
+                            {stackName}
+                          </p>
+                          <div className="absolute top-2 -right-12 h-5 w-12 bg-[#9329FE] rounded-full">
+                            <p className="font-semibold text-[7px] text-center text-white transition-transform translate-y-1">
+                              filing fast
+                            </p>
+                          </div>
                         </div>
-                        <div className='w-2/3 p-5 mt-6 overflow-y-scroll text-white rounded-lg col h-3/4 no-scrollbar bg-neutral-950 max-sm:text-xs scroll-smooth max-[640px]:w-fit max-[640px]:p-3 max-[640px]:max-w-[85%]'>
-                        {stackData && stackData.Details && stackData.Details[stackName] ? (
-                          stackData.Details[stackName].map((item, index) => (
-                            <div key={index} className='flex px-2 py-2'>
-                              <img className='max-sm:h-3' src={forward} alt="" />
-                              <p className='ml-4 text-left'>{item}</p>
-                            </div>
-                          ))
-                        ) : (
-                          <p className='animate-pulse'>$</p>
-                        )}
-
+                        <div className="w-2/3 p-5 mt-6 overflow-y-scroll text-white rounded-lg col h-3/4 no-scrollbar bg-neutral-950 max-sm:text-xs scroll-smooth max-[640px]:w-fit max-[640px]:p-3 max-[640px]:max-w-[85%]">
+                          {stackData &&
+                          stackData.Details &&
+                          stackData.Details[stackName] ? (
+                            stackData.Details[stackName].map((item, index) => (
+                              <div key={index} className="flex px-2 py-2">
+                                <img
+                                  className="max-sm:h-3"
+                                  src={forward}
+                                  alt=""
+                                />
+                                <ReactTyped
+                                  strings={[item]}
+                                  typeSpeed={5}
+                                  startDelay={delays[index]}
+                                  showCursor={false}
+                                />
+                              </div>
+                            ))
+                          ) : (
+                            <p className="animate-pulse">$</p>
+                          )}
                         </div>
                       </div>
                     </div>
@@ -88,5 +130,5 @@ export default function PopModel() {
         </div>
       </Dialog>
     </Transition.Root>
-  )
+  );
 }
