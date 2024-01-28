@@ -5,7 +5,7 @@ import _03 from '../assets/Culturals/3.png'
 
 function Culturals(){
     return(
-        <div className="flex  justify-start max-[768px]:translate-x-[10%] max-[768px]:w-[80%] w-full h-[60vw] max-[768px]:h-[90vw] ">
+        <div className="flex  justify-center max-[768px]:translate-x-[10%] max-[768px]:w-[80%] w-full h-[60vw] max-[768px]:h-[90vw] ">
             <div className="relative border w-[30vw] h-[20vw] border-whtie max-[768px]:w-[45vw] max-[768px]:h-[30vw] ">
                 <img src={_01} alt=""  className='w-full h-full'/>
                 <p className="w-full text-white bg-gradient-to-r from-[#9329FE] to-transparent px-5 absolute bottom-0 right-0"> CEC Band</p>
