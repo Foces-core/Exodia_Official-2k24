@@ -88,7 +88,7 @@ function FAQ()
 
           <Accordion open={open === 7} icon={<Icon id={7} open={open} />} className={AccordianStyle} data-aos='fade-up' data-aos-duration={250} data-aos-delay={500}>
           <AccordionHeader onClick={() => handleOpen(7)} className={AccordianHeaderStyle}>
-          Can I request a refund if I`&apos;`m unable to attend after registering?
+          Can I request a refund if I&apos;m unable to attend after registering?
           </AccordionHeader>
           <AccordionBody className={AccordianBodyStyle}>
           No, refunds will not be available for registrations after the registration process is complete.
