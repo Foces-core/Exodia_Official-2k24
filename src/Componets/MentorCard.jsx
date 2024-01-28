@@ -18,7 +18,7 @@ function MentorCard( props)
             <div className={"flex flex-col gap-2 max-[768px]:px-8  text-white max-[768px]:text-left "+((props.Index%2==0)?"text-left pl-[16vh]":"text-right pr-[16vh]")}>
                 <p className="text-[2vw] font-bold max-[768px]:text-[4vw] max-[550px]:text-lg max-[375px]:text-[4.1vw]">{props.Name}</p>
                 <p className="max-[768px]:text-[2vw] max-[375px]:text-[3vw] ">{props.Desc}</p>
-                <a className={"w-[3vh] flex max-[768px]:self-start  "+((props.Index%2==0)?"":"self-end")}><img src={linkedinimg} alt=""/></a >
+                <a className={"w-[3vh] flex max-[768px]:self-start  "+((props.Index%2==0)?"":"self-end")}><img src={linkedinimg} alt="" className="cursor-pointer"/></a >
             </div>
             
             {/* Topic Section */}
