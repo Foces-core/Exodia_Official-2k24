@@ -13,13 +13,14 @@ export default function PopModel() {
   const cancelButtonRef = useRef(null);
   const [delays, setDelays] = useState([]);
   const [showImage, setShowImage] = useState([]);
+  const timeoutIds = useRef([]);
 
   useEffect(() => {
     if (stackData && stackData.Details && stackData.Details[stackName]) {
       let cumulativeDelay = 0;
       const newDelays = stackData.Details[stackName].map((item) => {
         const delay = cumulativeDelay;
-        cumulativeDelay += item.length * 5 + 700; // Adjust the multiplier according to your typeSpeed
+        cumulativeDelay += item.length * 5 + 500; // Adjust the multiplier according to your typeSpeed
         return delay;
       });
       setDelays(newDelays);
@@ -27,16 +28,22 @@ export default function PopModel() {
     }
   }, [stackData, stackName]);
 
+
   useEffect(() => {
     delays.forEach((delay, index) => {
-      setTimeout(() => {
+      const id = setTimeout(() => {
         setShowImage((prevShowImage) => {
           const newShowImage = [...prevShowImage];
           newShowImage[index] = true;
           return newShowImage;
         });
       }, delay);
+      timeoutIds.current.push(id);
     });
+
+    return () => {
+      timeoutIds.current.forEach((id) => clearTimeout(id));
+    };
   }, [delays]);
 
   return (
