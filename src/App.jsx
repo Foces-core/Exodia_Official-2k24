@@ -11,6 +11,9 @@ import AOS from 'aos'
 import Loading from "./Componets/Loading"
 import { useState,useEffect } from "react"
 import FAQ from "./pages/FAQ/FAQ.jsx"
+import About from "./pages/About/About.jsx"
+import Scope from "./Componets/Scope.jsx"
+import Culturals from "./Componets/Culturals.jsx"
 
 function App() {
   
@@ -26,6 +29,9 @@ function App() {
    <div className="min-h-screen scroll-smooth">
       <Topsect />
       <Home />
+      <About/>
+      <Scope/>
+      <Culturals/>
       <Stacks />
       <Mentors />
       <RegisterSection />

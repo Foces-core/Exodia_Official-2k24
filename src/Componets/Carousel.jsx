@@ -6,6 +6,7 @@ import "../index.css";
 import ProgressBar from './ProgressBar';
 import { progress, progressSelector } from '../../recoil';
 import { useRecoilState, useRecoilValue } from 'recoil';
+import { carousel } from '@material-tailwind/react';
 
 function Carousel() {
   const value = useRecoilValue(progressSelector);
@@ -24,11 +25,12 @@ function Carousel() {
     console.log("Rate:", rate);
     return rate; // Convert to percentage
   };
-
+  const LoadingStatus=[33.33,66.66,100]
+  console.log(selectedIndex)
   return (
     <div className='w-full slider'>
       <OwlCarousel
-        className='flex relative'
+        className='relative flex'
         loop={false}
         center={true}
         items={3}
@@ -37,6 +39,9 @@ function Carousel() {
         touchDrag={true}
         startPosition={0}
         onChanged={updateProgressBar}
+        info={carouselInfo => {
+          console.log(carouselInfo);
+        }}
         // onDrag={handleDrag}
       >
         <div className='item slider-card'>
@@ -50,8 +55,8 @@ function Carousel() {
         </div>
       </OwlCarousel>
       
-      <div className='flex w-full justify-center -z-20'>
-        <ProgressBar value={value} />
+      <div className='flex justify-center w-full -z-20'>
+        <ProgressBar value={LoadingStatus[selectedIndex]} />
       </div>
     </div>  
   );

@@ -4,7 +4,7 @@ function Footer() {
     <div>
  
 
-<footer className="bg-bg-[#151515] rounded-lg shadow ">
+<footer className="bg-[#151515] rounded-lg shadow ">
     <div className="w-full p-4 mx-auto max-w-screen-2xl md:py-8">
         <div className="sm:flex sm:items-center sm:justify-between">
             <a href="https://flowbite.com/" className="flex items-center mb-4 space-x-3 sm:mb-0 rtl:space-x-reverse">
