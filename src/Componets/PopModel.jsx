@@ -12,18 +12,32 @@ export default function PopModel() {
   const stackData = useRecoilValue(stackdetails);
   const cancelButtonRef = useRef(null);
   const [delays, setDelays] = useState([]);
+  const [showImage, setShowImage] = useState([]);
 
   useEffect(() => {
     if (stackData && stackData.Details && stackData.Details[stackName]) {
       let cumulativeDelay = 0;
       const newDelays = stackData.Details[stackName].map((item) => {
         const delay = cumulativeDelay;
-        cumulativeDelay += item.length * 5 + 500; // Adjust the multiplier according to your typeSpeed
+        cumulativeDelay += item.length * 5 + 700; // Adjust the multiplier according to your typeSpeed
         return delay;
       });
       setDelays(newDelays);
+      setShowImage(new Array(stackData.Details[stackName].length).fill(false));
     }
   }, [stackData, stackName]);
+
+  useEffect(() => {
+    delays.forEach((delay, index) => {
+      setTimeout(() => {
+        setShowImage((prevShowImage) => {
+          const newShowImage = [...prevShowImage];
+          newShowImage[index] = true;
+          return newShowImage;
+        });
+      }, delay);
+    });
+  }, [delays]);
 
   return (
     <Transition.Root show={open} as={Fragment}>
@@ -94,11 +108,13 @@ export default function PopModel() {
                           stackData.Details[stackName] ? (
                             stackData.Details[stackName].map((item, index) => (
                               <div key={index} className="flex px-2 py-2">
-                                <img
-                                  className="max-sm:h-3"
-                                  src={forward}
-                                  alt=""
-                                />
+                                {showImage[index] && (
+                                  <img
+                                    className="max-sm:h-3"
+                                    src={forward}
+                                    alt=""
+                                  />
+                                )}
                                 <ReactTyped
                                   strings={[item]}
                                   typeSpeed={5}
