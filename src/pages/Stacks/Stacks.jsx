@@ -11,6 +11,7 @@ import Folder from '../../Componets/Folder';
 function Stacks() {
   const [stackData, setStackData] = useRecoilState(stackdetails);
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 769);
+  const [value, setValue] = useState(0.33);
 
   useEffect(() => {
     // Set the Recoil state with the data when the component mounts
@@ -40,10 +41,10 @@ function Stacks() {
           {isMobile ? (
           <>
             <div className='flex flex-col mt-5 h-96 items-center max-md:w-full'>
-              <Carousel/>
+              {<Carousel onValueChange={setValue}/>}
             </div>
              <div className='flex -mt-36 w-full justify-center -z-20'>
-             <ProgressBar value={0.7}/>
+             <ProgressBar value={value} />
            </div>
            </>
             

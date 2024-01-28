@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types';
 
 const ProgressBar = ({ value }) => {
+  console.log('ProgressBar value:', value);
   const circumference = 342.441; // Adjust the circumference based on your path length
   const dashArray = circumference;
   const dashOffset = dashArray - (value * dashArray);
@@ -15,7 +16,7 @@ const ProgressBar = ({ value }) => {
           stroke='green'
           strokeWidth="3"
           strokeLinecap="round"
-          style={{ strokeDasharray: dashArray, strokeDashoffset: dashOffset }}
+          style={{ strokeDasharray: dashArray, strokeDashoffset: dashOffset, transition: 'stroke-dashoffset 0.5s ease-in-out', }}
         />
       </svg>
     </div>
@@ -23,7 +24,7 @@ const ProgressBar = ({ value }) => {
 };
 
 ProgressBar.propTypes = {
-  width: PropTypes.number.isRequired,
+  value: PropTypes.number.isRequired,
 };
 
 export default ProgressBar;
