@@ -14,6 +14,7 @@ import FAQ from "./pages/FAQ/FAQ.jsx"
 import About from "./pages/About/About.jsx"
 import Scope from "./Componets/Scope.jsx"
 import Culturals from "./Componets/Culturals.jsx"
+import Contact from "./pages/Contact/Contact.jsx"
 
 function App() {
   
@@ -37,6 +38,7 @@ function App() {
       <RegisterSection />
       <FAQ/>
       <Leftnav/>
+      <Contact/>
       <Footer/>
    </div>
     </>
