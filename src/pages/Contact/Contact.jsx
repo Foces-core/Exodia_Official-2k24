@@ -11,11 +11,11 @@ function Contact()
                 <div className="w-[33%] h-full max-[700px]:w-full max-[700px]:h-[50%]">
                 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3937.179869160877!2d76.61490531046704!3d9.31732529071739!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b0622ea027eb08f%3A0x41105b207db821c6!2sCollege%20of%20Engineering%20Chengannur!5e0!3m2!1sen!2sin!4v1706448825074!5m2!1sen!2sin" width="100%" height="100%" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe> 
                 </div>
-                <div className="w-[33%] h-full bg-black flex flex-col p-6 justify-end text-white relative overflow-hidden max-[700px]:w-full max-[700px]:h-[50%]"> 
-                    <p className="py-5 text-3xl max-[1360px]:text-2xl text-nowrap max-[1130px]:text-xl">Point of Contact</p>
-                    <p className="flex items-center gap-2"><AiOutlinePhone/>+91-9744184806,+91-9447351280</p>
-                    <p className="flex items-center gap-2"><AiOutlinePhone/>+91-7034721200,+91-9526055034</p>
-                    <p className="flex items-center gap-2"><CiMail/>exodiacec@gmail.com</p>
+                <div className="w-[33%] h-full bg-black flex flex-col p-6 justify-end text-white relative overflow-hidden max-[700px]:w-full max-[700px]:h-[50%] "> 
+                    <p className="py-5 text-xl font-bold text-[#1D9D51] max-[1360px]:text-xl text-nowrap max-[1130px]:text-lg ">Point of Contact</p>
+                    <p className="flex items-center gap- md:text-sm"><AiOutlinePhone/>+91-9744184806,+91-9447351280</p>
+                    <p className="flex items-center gap-2 md:text-sm"><AiOutlinePhone/>+91-7034721200,+91-9526055034</p>
+                    <p className="flex items-center gap-2 md:text-sm"><CiMail/>exodiacec@gmail.com</p>
                     <p className="absolute text-white text-[9rem] theme top-0 max-[1360px]:text-9xl max-[1211px]:text-7xl max-[1211px]:left-[40%]  max-[700px]:hidden">exoDia</p>
                 </div>
                 <div className="w-[33%] h-full flex flex-col p-6 gap-3 justify-end bg-[#1D9D51] text-white relative overflow-hidden max-[700px]:w-full max-[700px]:h-[50%]"> 
