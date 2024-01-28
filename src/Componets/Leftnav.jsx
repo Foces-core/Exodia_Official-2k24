@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import {Link} from 'react-router-dom';
 
 function Leftnav() {
-  const sectionIds = ["Contacts","Mentors", "Stacks", "Home"];
+  const sectionIds = ["Mentors", "Stacks","About" ,"Home"];
   const [activeSection, setActiveSection] = useState(sectionIds[0]);
 
   useEffect(() => {

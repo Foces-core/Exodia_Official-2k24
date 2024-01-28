@@ -4,7 +4,7 @@ function About()
     const data=[{'count':3,'type':'Stacks'},{'count':180,'type':'Students'},{'count':2,'type':'Days'}]
     return(
         <>
-        <div className="flex flex-col items-center justify-center gap-10">
+        <div id='About' className="flex flex-col items-center justify-center gap-10">
             <div className="flex flex-col gap-5 p-5 w-fit h-fit">
                 
             
