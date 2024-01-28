@@ -28,6 +28,7 @@ function Carousel() {
 
   useEffect(() => {
     counter(); // Initial call
+    value = localStorage.getItem('progress');
   }, []);
 console.log(value);
   return (

@@ -43,7 +43,7 @@ function Stacks() {
               <Carousel/>
             </div>
              <div className='flex -mt-36 w-full justify-center -z-20'>
-             <ProgressBar value={0.7}/>
+             <ProgressBar value={0.4}/>
            </div>
            </>
             

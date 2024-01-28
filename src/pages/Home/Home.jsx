@@ -7,10 +7,9 @@ import 'atropos/css'
 import Atropos from 'atropos/react'
 import { useCallback, useEffect } from 'react'
 import Counter from '../../Componets/Counter'
-// import rallax from 'rallax.js'
-// import rolly from 'rolly.js'
-// import 'rolly.js/dist/rolly.min.css'
-
+ import rallax from 'rallax.js'
+import rolly from 'rolly.js'
+//import 'rolly.js/dist/rolly.min.css'
 
 
 
