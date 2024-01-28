@@ -1,9 +1,10 @@
+import Registerimg from '../assets/Register.svg'
 function RegisterSection()
 {
     return (
-        <div className="flex items-center justify-center w-full h-screen " >
+        <div className="relative flex items-center justify-center w-full h-screen " >
         {/* Screen Container */}
-        <div className="flex justify-center w-full my-10" data-aos='fade-up'>
+        <div className="z-10 flex justify-center w-full my-10 " data-aos='fade-up'>
             {/* Card Main Container */}
             <div className="relative w-2/3 h-[35vh] max-[390px]:w-5/6">
                 {/* Content */}
@@ -17,6 +18,7 @@ function RegisterSection()
             </div>
 
         </div>
+        <img src={Registerimg} alt="" className='absolute z-0'/>
         </div>
     );
 }

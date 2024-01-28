@@ -1,5 +1,6 @@
 import {Accordion,AccordionHeader,AccordionBody} from '@material-tailwind/react'
 import React from 'react'
+import FAQimg from '../../assets/Faq.svg'
 
 function Icon({ id, open }) {
     return (
@@ -26,7 +27,7 @@ function FAQ()
     const AccordianBodyStyle='text-white p-2'
 
     return(<>
-    <div className='flex flex-col items-center justify-center w-full h-screen gap-3 p-5 '>
+    <div className='relative flex flex-col items-center justify-center w-full h-screen gap-3 p-5'>
         <p className='text-5xl text-white theme'>FAQ</p>
     <div className='w-3/4 mt-5 '>
     
@@ -60,6 +61,7 @@ function FAQ()
         </AccordionBody>
       </Accordion>
     </div>
+    <img src={FAQimg} alt="" className='absolute w-full h-[90%] bottom-0'/>
     </div>
     </>)
 }
