@@ -1,46 +1,24 @@
-import Topsect from "./Componets/Topsect"
-import Leftnav from "./Componets/Leftnav"
-import Home from "./pages/Home/Home"
-import Stacks from "./pages/Stacks/Stacks"
-import RegisterSection from "./Componets/RegisterSection"
-import Mentors from "./pages/Mentors/Mentors"
-import './App.css';
-import Footer from "./Componets/Footer"
+// App.js
+import React, { useEffect, useState } from "react";
+import ChildComponent from "./ChildComponent.jsx";
 import 'aos/dist/aos.css';
-import AOS from 'aos'
-import Loading from "./Componets/Loading"
-import { useState,useEffect } from "react"
-import FAQ from "./pages/FAQ/FAQ.jsx"
-import About from "./pages/About/About.jsx"
-import Scope from "./Componets/Scope.jsx"
-import Culturals from "./Componets/Culturals.jsx"
+import AOS from 'aos';
+import Loading from "./Componets/Loading";
 
 function App() {
-  
-  AOS.init()
-  const [loading, setLoading] = useState(true)
+  AOS.init();
+  const [loading, setLoading] = useState(true);
+
   useEffect(() => {
-    setTimeout(() => setLoading(false), 5600)
-  }, [])
+    setTimeout(() => setLoading(false), 5600);
+  }, []);
 
   return (
-    <>
-      {loading&&<Loading/>}
-   <div className="min-h-screen scroll-smooth">
-      <Topsect />
-      <Home />
-      <About/>
-      <Scope/>
-      <Culturals/>
-      <Stacks />
-      <Mentors />
-      <RegisterSection />
-      <FAQ/>
-      <Leftnav/>
-      <Footer/>
-   </div>
-    </>
-  )
+    <div className="min-h-screen scroll-smooth">
+      {loading && <Loading />}
+      <ChildComponent />
+    </div>
+  );
 }
 
-export default App
+export default App;

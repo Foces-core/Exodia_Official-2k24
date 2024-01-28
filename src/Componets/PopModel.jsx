@@ -54,14 +54,14 @@ export default function PopModel() {
                       <div className="relative flex flex-col items-center w-full mt-2 h-96 bg-zinc-900">
                         <div className='relative'>
                           <p className="pt-4 text-4xl text-white col theme max-[640px]:text-2xl max-[350px]:text-xl">{stackName}</p>
-                          <div className='absolute top-2 -right-12 h-5 w-12 bg-[#9329FE] rounded-full'><p className='font-semibold text-[7px] text-center text-white transition-transform translate-y-1'>filing fast</p></div>
+                          <div className='absolute top-2 -right-12 h-5 w-12 bg-[#9329FE] rounded-full'><p className='font-semibold text-[7px] text-center\ text-white transition-transform translate-y-1'>filing fast</p></div>
                         </div>
                         <div className='w-2/3 p-5 mt-6 overflow-y-scroll text-white rounded-lg col h-3/4 no-scrollbar bg-neutral-950 max-sm:text-xs scroll-smooth max-[640px]:w-fit max-[640px]:p-3 max-[640px]:max-w-[85%]'>
                         {stackData && stackData.Details && stackData.Details[stackName] ? (
                           stackData.Details[stackName].map((item, index) => (
                             <div key={index} className='flex px-2 py-2'>
                               <img className='max-sm:h-3' src={forward} alt="" />
-                              <p className='ml-4'>{item}</p>
+                              <p className='ml-4 text-left'>{item}</p>
                             </div>
                           ))
                         ) : (
