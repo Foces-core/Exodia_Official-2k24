@@ -7,6 +7,7 @@ import { stackdetails } from '../../../recoil';
 import Carousel from '../../Componets/Carousel';
 import ProgressBar from '../../Componets/ProgressBar';
 import Folder from '../../Componets/Folder';
+import { ReactTyped } from 'react-typed';
 
 function Stacks() {
   const [stackData, setStackData] = useRecoilState(stackdetails);
@@ -58,7 +59,6 @@ function Stacks() {
           )}
         </div>)
           }
-         
         </>
         <PopModel />
       </div>
