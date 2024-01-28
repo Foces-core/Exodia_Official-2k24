@@ -1,36 +1,14 @@
-import { useEffect } from 'react';
+import React, { useRef, memo } from 'react';
+import PropTypes from 'prop-types';
 import OwlCarousel from 'react-owl-carousel';  
 import 'owl.carousel/dist/assets/owl.carousel.css';  
 import 'owl.carousel/dist/assets/owl.theme.default.css';  
 import Folder from './Folder';
 import "../index.css";
-import ProgressBar from './ProgressBar';
-import { progress } from '../../recoil';
-import { useRecoilValue } from 'recoil';
 
+const Carousel = memo(({ onValueChange }) => {
+  const currentIndexRef = useRef(0);
 
-function Carousel() {
-
-  var value;
-
-  function counter(event) {
-    if (event && event.item) {
-      var items = event.item.count;
-      var item = event.item.index + 1;
-      var sldPercent =  item / items;
-       console.log(sldPercent);
-      //  setValue(sldPercent);
-      localStorage.setItem('progress',sldPercent);
-      // value = localStorage.getItem('progress');
-    }
-    return 
-  }
-
-  useEffect(() => {
-    counter(); // Initial call
-    value = localStorage.getItem('progress');
-  }, []);
-console.log(value);
   return (
     <div className='w-full slider'>
       <OwlCarousel
@@ -41,23 +19,38 @@ console.log(value);
         slideBy={1}
         mouseDrag={true}
         touchDrag={true}
-        onInitialized={counter}
-        onTranslated={counter}
+        onTranslated={(event) => {
+          currentIndexRef.current = event.item.index;
+          const centeredItemIndex = currentIndexRef.current;
+          if (centeredItemIndex === 0) {
+            onValueChange(0.33);
+          }
+          else if (centeredItemIndex === 1) {
+            onValueChange(0.66);
+          }
+          else if (centeredItemIndex === 2) {
+            onValueChange(1);
+          }
+        }}
       >
         <div className='item slider-card'>
           <Folder name='Generative Ai' />
         </div>
         <div className='item slider-card'>
-          <Folder name='Augmented Reality'/>
+          <Folder name='Augmented Reality' />
         </div>
         <div className='item slider-card'>
-          <Folder name='Game Development'/>
+          <Folder name='Game Development' />
         </div>
       </OwlCarousel>
-      
-     
-    </div>  
+    </div>
   );
-}
+});
+
+Carousel.displayName = 'Carousel';
+
+Carousel.propTypes = {
+  onValueChange: PropTypes.func.isRequired,
+};
 
 export default Carousel;
