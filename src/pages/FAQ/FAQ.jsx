@@ -29,7 +29,7 @@ function FAQ()
     return(<>
     <div className='relative flex flex-col items-center justify-center w-full h-screen gap-3 p-3'>
         <p className='text-8xl text-white theme max-md:text-5xl'>FAQ</p>
-    <div className='z-10 w-3/4 mt-5'>
+    <div className='z-10 w-3/4 mt-5 '>
     
         
     <Accordion open={open === 1} icon={<Icon id={1} open={open} />} className={AccordianStyle} data-aos='fade-up' data-aos-duration={250}> 
@@ -61,7 +61,7 @@ function FAQ()
         </AccordionBody>
       </Accordion>
     </div>
-    <img src={FAQimg} alt="" className='absolute w-full h-[70%] bottom-2 z-0'/>
+    <img src={FAQimg} alt="" className='absolute w-full h-[50%] bottom-14 z-0'/>
     </div>
     </>)
 }
