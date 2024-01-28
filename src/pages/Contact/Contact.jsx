@@ -5,8 +5,8 @@ import { FaInstagram,FaLinkedin } from "react-icons/fa";
 function Contact()
 {
     return (
-        <div className="relative flex flex-col items-center justify-center w-full gap-10 p-10 py-18">
-            <p className="theme text-[#9329FE] text-3xl">Contact Us</p>
+        <div className="relative flex flex-col items-center justify-center w-full h-screen gap-10 p-10 py-18">
+            <p className="theme text-[#9329FE] text-8xl max-md:text-5xl">Contact Us</p>
             <div className="flex w-[60vw]  h-[300px]  max-[860px]:w-[80vw] max-[1360px]:h-[250px] max-[700px]:flex-col max-[700px]:h-fit">
                 <div className="w-[33%] h-full max-[700px]:w-full max-[700px]:h-[50%]">
                 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3937.179869160877!2d76.61490531046704!3d9.31732529071739!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b0622ea027eb08f%3A0x41105b207db821c6!2sCollege%20of%20Engineering%20Chengannur!5e0!3m2!1sen!2sin!4v1706448825074!5m2!1sen!2sin" width="100%" height="100%" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe> 

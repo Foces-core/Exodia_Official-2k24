@@ -27,7 +27,7 @@ function FAQ()
     const AccordianBodyStyle='text-white p-2'
 
     return(<>
-    <div className='relative flex flex-col items-center justify-center w-full h-screen gap-3 p-5'>
+    <div className='relative flex flex-col items-center justify-center w-full h-screen gap-3 p-3'>
         <p className='text-8xl text-white theme max-md:text-5xl'>FAQ</p>
     <div className='z-10 w-3/4 mt-5'>
     
