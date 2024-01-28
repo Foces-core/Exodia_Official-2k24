@@ -1,43 +1,47 @@
+import { useEffect } from 'react';
 import OwlCarousel from 'react-owl-carousel';  
 import 'owl.carousel/dist/assets/owl.carousel.css';  
 import 'owl.carousel/dist/assets/owl.theme.default.css';  
 import Folder from './Folder';
 import "../index.css";
 import ProgressBar from './ProgressBar';
-import { progress, progressSelector } from '../../recoil';
-import { useRecoilState, useRecoilValue } from 'recoil';
+import { progress } from '../../recoil';
+import { useRecoilValue } from 'recoil';
+
 
 function Carousel() {
-  const value = useRecoilValue(progressSelector);
-  const [selectedIndex, setSelectedIndex] = useRecoilState(progress);
 
-  const handleDrag = (event) => {
-    const newIndex = event.item.index;
-    console.log("Selected Index:", newIndex);
-    setSelectedIndex(newIndex);
-    // Do something with the new index value
-  };
+  var value;
 
-  const updateProgressBar = () => {
-    const end = selectedIndex + 1; // Assuming selectedIndex starts from 0
-    const rate = Math.min(end / 3, 1); // Assuming 3 items in the carousel
-    console.log("Rate:", rate);
-    return rate; // Convert to percentage
-  };
+  function counter(event) {
+    if (event && event.item) {
+      var items = event.item.count;
+      var item = event.item.index + 1;
+      var sldPercent =  item / items;
+       console.log(sldPercent);
+      //  setValue(sldPercent);
+      localStorage.setItem('progress',sldPercent);
+      // value = localStorage.getItem('progress');
+    }
+    return 
+  }
 
+  useEffect(() => {
+    counter(); // Initial call
+  }, []);
+console.log(value);
   return (
     <div className='w-full slider'>
       <OwlCarousel
-        className='flex relative'
+        className='flex relative owl-carousel owl-theme '
         loop={false}
         center={true}
         items={3}
         slideBy={1}
         mouseDrag={true}
         touchDrag={true}
-        startPosition={0}
-        onChanged={updateProgressBar}
-        // onDrag={handleDrag}
+        onInitialized={counter}
+        onTranslated={counter}
       >
         <div className='item slider-card'>
           <Folder name='Generative Ai' />
@@ -50,9 +54,7 @@ function Carousel() {
         </div>
       </OwlCarousel>
       
-      <div className='flex w-full justify-center -z-20'>
-        <ProgressBar value={value} />
-      </div>
+     
     </div>  
   );
 }

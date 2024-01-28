@@ -5,6 +5,7 @@ import data from '../../Data.json';
 import { useRecoilState } from 'recoil';
 import { stackdetails } from '../../../recoil';
 import Carousel from '../../Componets/Carousel';
+import ProgressBar from '../../Componets/ProgressBar';
 
 
 function Stacks() {
@@ -32,14 +33,18 @@ function Stacks() {
             <p>loading</p>
           )}
         </div> */}
-        <div className='flex flex-col mt-5 h-fit items-center max-md:w-full'> <Carousel/>
+        <div className='flex flex-col mt-5 h-96 items-center max-md:w-full'>
+          <Carousel/>
         </div>
+        <div className='flex -mt-36 w-full justify-center -z-20'>
+      <ProgressBar value={0.7}/>
+      </div>
         <PopModel />
       </div>
 
       {/*////////////// BOTTOM //////////// */}
       <div>
-        <img className="absolute top-[450px] left-40 scale-150 -z-10 max-md:top-44 left-10" src={stackbg} alt="" />
+        <img className="absolute top-[450px] left-40 scale-150 -z-10 max-md:top-52 left-7" src={stackbg} alt="" />
       </div>
     </div>
   );
