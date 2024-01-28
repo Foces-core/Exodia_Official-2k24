@@ -1,6 +1,6 @@
 import { AiOutlinePhone } from "react-icons/ai";
 import { CiMail } from "react-icons/ci";
-import { FaFacebook, FaInstagram,FaLinkedin, FaYoutube } from "react-icons/fa";
+import { FaFacebook, FaInstagram, FaYoutube } from "react-icons/fa";
 
 function Contact()
 {
@@ -13,15 +13,15 @@ function Contact()
                 </div>
                 <div className="w-[33%] h-full bg-black flex flex-col p-6 justify-end text-white relative overflow-hidden max-[700px]:w-full max-[700px]:h-[50%] "> 
                     <p className="py-5 text-xl font-bold text-[#1D9D51] max-[1360px]:text-xl text-nowrap max-[1130px]:text-lg ">Point of Contact</p>
-                    <p className="flex items-center gap- md:text-sm"><AiOutlinePhone/>+91-9744184806,+91-9447351280</p>
+                    <p className="flex items-center gap-1 md:text-sm"><AiOutlinePhone/>+91-9744184806,+91-9447351280</p>
                     <p className="flex items-center gap-2 md:text-sm"><AiOutlinePhone/>+91-7034721200,+91-9526055034</p>
                     <p className="flex items-center gap-2 md:text-sm"><CiMail/>exodiacec@gmail.com</p>
                     <p className="absolute text-white text-[9rem] theme top-0 max-[1360px]:text-9xl max-[1211px]:text-7xl max-[1211px]:left-[40%]  max-[700px]:hidden">exoDia</p>
                 </div>
                 <div className="w-[33%] h-full flex flex-col p-6 gap-3 justify-end bg-[#1D9D51] text-white relative overflow-hidden max-[700px]:w-full max-[700px]:h-[50%]"> 
                     <p className="absolute text-black text-[9rem] theme top-0 -left-[91%] max-[1360px]:text-9xl max-[1211px]:text-7xl max-[1211px]:-left-[60%] max-[700px]:hidden ">exoDia</p>
-                    <p className="text-4xl text-white theme max-md:hidden">'24</p>
-                    <p className="text-4xl text-white theme md:hidden">exodia '24</p>
+                    <p className="text-4xl text-white theme max-md:hidden">&apos;24</p>
+                    <p className="text-4xl text-white theme md:hidden">exodia &apos;24</p>
                     <p className="text-white">Connect us</p>
                     <div className="flex gap-3">
                         <a href="https://www.instagram.com/exodia.cec?igsh=MWZvYTY0NXg3aWdqdw=="><FaInstagram size={30}/></a>
