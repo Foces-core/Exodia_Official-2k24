@@ -41,15 +41,15 @@ function Stacks() {
         <>
           {isMobile ? (
           <>
-            <div className='flex flex-col mt-5 h-96 items-center max-md:w-full'>
+            <div className='flex flex-col items-center mt-5 h-96 max-md:w-full'>
               {<Carousel onValueChange={setValue}/>}
             </div>
-             <div className='flex -mt-36 w-full justify-center -z-20'>
+             <div className='flex justify-center w-full -mt-36 -z-20'>
              <ProgressBar value={value} />
            </div>
            </>
             
-          ) : (   <div className="flex m-5 mt-28 gap-10">
+          ) : (   <div className="flex gap-10 m-5 mt-28">
           {stackData && stackData.Stack_name ? (
             stackData.Stack_name.map((item) => (
               <Folder key={item} name={item} />
