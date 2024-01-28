@@ -1,7 +1,7 @@
 import MentorCard from "../../Componets/MentorCard";
 import AshwinImg from "../../assets/Mentors/Ashwin Dev MP.png";
 import MentorImg from "../../assets/Mentors/Mentors.svg";
-import AromalImg from "../../assets/Mentors/Aromal.png";
+import AromalImg from "../../assets/Mentors/aromal.png";
 import JerilImg from "../../assets/Mentors/Jeril.png";
 
 function Mentors() {
