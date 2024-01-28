@@ -45,7 +45,7 @@ function Leftnav() {
         ))}
       </div>
 
-      <div className="hidden  flex-row-reverse sticky z-30 px-4 bottom-6 w-[90%] h-10 left-[5%] text-white  gap-5 rounded-lg justify-center items-center right-4 bg-[#6C6C6C80] max-[768px]:flex">
+      <div className="hidden  flex-row-reverse sticky z-30 px-4 bottom-6 w-[90%] h-10 left-[5%] text-white  gap-5 rounded-lg justify-center items-center right-4 backdrop-blur-sm bg-[#6C6C6C80] max-[768px]:flex">
         {sectionIds.map(id => (
           <p
             key={id}

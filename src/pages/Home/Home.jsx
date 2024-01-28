@@ -48,20 +48,21 @@ function Home() {
       <div className='flex justify-center w-full mt-12 '><img className=' max-sm:w-40 max-sm:mt-60 max-[595px]:mb-56 max-[595px]:mt-4 max-[595px]:w-60' src={forums} alt="forums" /></div> 
 {/* Middle section */}
 
-      <div className='w-full h-[60vh] flex justify-center items-center max-sm:-mt-60 '>  
+      <div className='w-full h-[60vh] flex justify-center  flex-col items-center max-sm:-mt-60 '>  
         <Atropos className='my-atropos' highlight={false} shadow={false}>
           <div className='flex items-center justify-center w-full h-full text-[15vw] theme max-sm:text-[24vw] '>
 
               <p className={`absolute text-white z-10 `} data-atropos-offset='0'>exoDia</p>
               <p className={`mr-2 mt-4 text-[#9329FE] `} data-atropos-offset='-3' >exoDia</p>
-
+             
           </div>
-          <div className={`h-5 w-full text-lg text-white theme`} data-atropos-offset='0'>ALL KERALA TECHNICAL LEARNING GALA</div>
+          
         </Atropos>
+        <p className={` flex text-lg text-gray-300 theme max-md:text-xs`} data-atropos-offset='3'>ALL KERALA TECHNICAL LEARNING GALA</p>
       </div>
-      <div className='flex flex-col items-center w-full -mt-16 max-sm:mt-12'>
+      <div className='flex flex-col items-center w-full -mt-16 max-sm:mt-24'>
         <Counter/>
-      <button className='flex bg-red-700 w-72 h-10 rounded-lg justify-center items-center text-white text-lg font-bold mt-10 ease-in duration-100 hover:scale-105 max-sm:w-[90%] max-sm:mt-40'>Register</button>
+      <button className='flex bg-red-700 w-72 h-10 rounded-lg justify-center items-center text-white text-lg font-bold mt-10 ease-in duration-100 hover:scale-105 max-sm:w-[90%] max-sm:mt-24'>Register</button>
       </div>
 
 

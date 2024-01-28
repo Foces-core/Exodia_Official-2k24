@@ -28,7 +28,7 @@ function FAQ()
 
     return(<>
     <div className='relative flex flex-col items-center justify-center w-full h-screen gap-3 p-5'>
-        <p className='text-5xl text-white theme'>FAQ</p>
+        <p className='text-8xl text-white theme max-md:text-5xl'>FAQ</p>
     <div className='z-10 w-3/4 mt-5'>
     
         

@@ -107,7 +107,7 @@ export default function PopModel() {
                           stackData.Details &&
                           stackData.Details[stackName] ? (
                             stackData.Details[stackName].map((item, index) => (
-                              <div key={index} className="flex px-2 py-2">
+                              <div key={index} className="flex px-2 py-2 text-left gap-1">
                                 {showImage[index] && (
                                   <img
                                     className="max-sm:h-3"

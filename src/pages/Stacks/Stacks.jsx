@@ -35,7 +35,7 @@ function Stacks() {
     <div className="relative z-0 flex items-center justify-center w-full h-screen overflow-hidden" id="Stacks">
       {/* ///////////////MID CONTENT////////////// */}
       <div className="flex flex-col h-[600px] w-[900px] items-center justify-center  ">
-        <p className="theme text-8xl text-[#1D9D51] justify-center max-md:text-4xl">STACKS</p>
+        <p className="theme text-8xl text-[#1D9D51] justify-center max-md:text-5xl">STACKS</p>
         <p className="mt-5 bg-[#1D9D51] rounded-lg text-white font-bold text-center text-lg max-sm:text-sm h-5 w-64 rounded-md font-medium sm:h-8 w-52">Choose your adventure !</p>
      
         <>
