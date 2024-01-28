@@ -8,7 +8,7 @@ function About() {
   ];
   return (
     <>
-      <div className="flex flex-col items-center justify-center gap-10">
+      <div id='About' className="flex flex-col items-center justify-center gap-10">
         <div className="flex flex-col gap-5 p-5 w-fit h-fit">
           <p className="text-4xl text-white theme">
             exoDia <span className="text-2xl theme">'24</span>
