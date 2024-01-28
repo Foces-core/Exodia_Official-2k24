@@ -26,9 +26,9 @@ function FAQ()
     const AccordianBodyStyle='text-white p-2'
 
     return(<>
-    <div className='flex flex-col items-center justify-center w-full gap-3 p-5 h-fit'>
-        <p className='text-4xl text-white theme'>FAQ</p>
-    <div className='w-3/4'>
+    <div className='flex flex-col items-center justify-center h-screen w-full gap-3 p-5 '>
+        <p className='text-5xl text-white theme'>FAQ</p>
+    <div className=' mt-5 w-3/4'>
     
         
     <Accordion open={open === 1} icon={<Icon id={1} open={open} />} className={AccordianStyle}>

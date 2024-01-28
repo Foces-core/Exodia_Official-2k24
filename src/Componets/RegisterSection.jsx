@@ -1,9 +1,9 @@
 function RegisterSection()
 {
     return (
-        <>
+        <div className="h-screen w-full flex items-center justify-center ">
         {/* Screen Container */}
-        <div className="flex justify-center my-10">
+        <div className="flex justify-center my-10 w-full">
             {/* Card Main Container */}
             <div className="relative w-2/3 h-[35vh] max-[390px]:w-5/6">
                 {/* Content */}
@@ -17,7 +17,7 @@ function RegisterSection()
             </div>
 
         </div>
-        </>
+        </div>
     );
 }
 export default RegisterSection;
