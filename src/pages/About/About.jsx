@@ -10,10 +10,10 @@ function About() {
     <>
       <div id='About' className="flex flex-col items-center justify-center gap-10">
         <div className="flex flex-col gap-5 p-5 w-fit h-fit">
-          <p className="text-4xl text-white theme">
+          <p className="text-4xl text-[#1D9D51] theme">
             exoDia <span className="text-2xl theme">'24</span>
           </p>
-          <div className="w-[50vw] max-[768px]:w-[70vw] max-[375px]:w-[80vw] max-[390px]:text-sm h-fit p-10 max-[470px]:p-5 border border-t-3 rounded-tr-xl rounded-bl-xl border-[#9329FE] text-white border-gradient">
+          <div className="w-[50vw] max-[768px]:w-[85vw] max-md:text-sm max-[375px]:w-[80vw] max-[390px]:text-sm min-h-72 text-justify text-xl t p-5 max-[470px]:p-5 border border-t-3 rounded-tr-xl rounded-bl-xl border-[#9329FE] text-gray-200 border-gradient">
             <p>
                           <ReactTyped strings={["Welcome to EXODIA- where Innovation meets Inspiration! Exodia is an all-Kerala event that brings together tech enthusiasts and creative minds to explore Artificial Intelligence (AI), Augmented Reality (AR), and Game Development. This immersive experience empowers attendees with innovative knowledge, hands-on workshops led by our esteemed mentors, and unparalleled networking opportunities. EXODIA is a joint effort by IEDC, FOCES, and MULEARN -the 3 leading forums of the College Of Engineering Chengannur. Taking place on February 17th and 18th at the prestigious CEC Campus, this extravaganza is a fusion of intellect, talent, and excitement. Join us at EXODIA, where you can fuel your passion for technology, connect with like-minded individuals, and stay at the forefront of the latest AI, AR, and Game Development advancements."]}
                               typeSpeed={20}
