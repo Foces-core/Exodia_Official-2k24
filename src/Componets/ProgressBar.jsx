@@ -1,9 +1,9 @@
 import PropTypes from 'prop-types';
 
-const ProgressBar = ({ width }) => {
+const ProgressBar = ({ value }) => {
   const circumference = 342.441; // Adjust the circumference based on your path length
   const dashArray = circumference;
-  const dashOffset = dashArray - (width * dashArray);
+  const dashOffset = dashArray - (value * dashArray);
 
   return (
     <div className="flex relative  h-1  transition duration-500 progress-bar">
