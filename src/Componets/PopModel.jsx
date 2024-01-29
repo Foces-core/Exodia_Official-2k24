@@ -139,7 +139,9 @@ export default function PopModel() {
                     <button
                       type="button"
                       className="inline-flex justify-center px-2 py-2 text-sm font-semibold text-white bg-red-600 border-none shadow-sm w-72 rounded-xl hover:bg-red-500 sm:ml-3 sm:w-28"
-                      onClick={() => setOpen(false)}
+                      onClick={() => {setOpen(false)
+                                        window.open("https://www.yepdesk.com/exodiacec", "_blank");
+                      }}
                     >
                       Register
                     </button>
