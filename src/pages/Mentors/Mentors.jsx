@@ -24,7 +24,7 @@ function Mentors() {
                 <p className="absolute text-white rotate-90 text-8xl theme h-fit w-fit top-[50%] max-md:text-5xl max-md:mb-20 -right-[30vh] max-[768px]:rotate-0  max-[768px]:relative max-[768px]:right-0 max-[768px]:top-0 ">MENTORS</p>
             </div>
             {/* Mentors Background */}
-            <img src={MentorImg} alt="" className="absolute bottom-1 z-0 w-full max-[750px]:bottom-22"/>
+            <img src={MentorImg} alt="" className="absolute bottom-1 z-0 w-full max-md:bottom-96"/>
         </div>
         
         </>
