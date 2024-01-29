@@ -25,8 +25,11 @@ export default function PopModel() {
       });
       setDelays(newDelays);
       setShowImage(new Array(stackData.Details[stackName].length).fill(false));
+      
+      
     }
-  }, [stackData, stackName]);
+
+  }, [stackData, stackName,open]);
 
   useEffect(() => {
     delays.forEach((delay, index) => {
@@ -38,7 +41,9 @@ export default function PopModel() {
         });
       }, delay);
       timeoutIds.current.push(id);
+      
     });
+
 
     return () => {
       timeoutIds.current.forEach((id) => clearTimeout(id));
@@ -90,7 +95,7 @@ export default function PopModel() {
                         >
                           <p>Choose your adventure !</p>
                           <p
-                            onClick={() => setOpen(false)}
+                            onClick={() => {setOpen(false);reset();}}
                             className="cursor-pointer theme"
                           >
                             x
@@ -108,10 +113,10 @@ export default function PopModel() {
                             </p>
                           </div>
                         </div>
-                        <div className="w-2/3 p-5 mt-6 overflow-y-scroll text-white rounded-lg col h-3/4 no-scrollbar bg-neutral-950 max-sm:text-xs scroll-smooth max-[640px]:w-fit max-[640px]:p-3 max-[640px]:max-w-[85%]">
+                        <div className="w-2/3 p-5 mt-6 overflow-y-scroll scrollbar-thin text-white rounded-lg col h-3/4 no-scrollbar bg-neutral-950 max-sm:text-xs scroll-smooth max-[640px]:w-fit max-[640px]:p-3 max-[640px]:max-w-[85%]">
                           {stackData && stackData.Details && stackData.Details[stackName] ? (
     stackData.Details[stackName].map((item, index) => (
-      <div key={index} className="flex px-2 py-2 text-left gap-1">
+      <div key={index} className="flex gap-1 px-2 py-2 text-left">
         {showImage[index] && (
           <img
             className="max-sm:h-3"
