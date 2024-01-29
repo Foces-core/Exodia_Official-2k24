@@ -62,10 +62,16 @@ function Home() {
       </div>
       <div className='flex flex-col items-center w-full -mt-16 max-sm:mt-24'>
         <Counter/>
-      <a href="https://www.yepdesk.com/exodiacec"><button className='flex bg-red-700 w-72 h-10 rounded-lg justify-center items-center text-white text-lg font-bold mt-10 ease-in duration-100 hover:scale-105 max-sm:w-[90%] max-sm:mt-24'>Register</button></a>
+      
+      <button
+        className='flex bg-red-700 w-72 h-10 rounded-lg justify-center items-center text-white text-lg font-bold mt-10 ease-in duration-100 hover:scale-105 max-sm:w-[90%] max-sm:mt-24'
+      >
+        <a href='https://www.yepdesk.com/exodiacec' target='_blank' rel='noopener noreferrer'>
+          Register
+        </a>
+      </button>
       </div>
-
-
+      {/* https://www.yepdesk.com/exodiacec */}
 
 
     </div>

@@ -5,7 +5,7 @@ import { FaFacebook, FaInstagram, FaYoutube } from "react-icons/fa";
 function Contact()
 {
     return (
-        <div className="relative flex flex-col items-center justify-center w-full h-[120vh] gap-10 p-10 py-18" id="Contact">
+        <div className="relative flex flex-col items-center justify-center w-full h-screen gap-10 p-10 py-18" id="Contact">
             <p className="theme text-[#9329FE] text-8xl max-md:text-5xl">Contact Us</p>
             <div className=" mt-20 flex w-[60vw]  h-[300px]  max-[860px]:w-[80vw] max-[1360px]:h-[250px] max-[700px]:flex-col max-[700px]:h-fit">
                 <div className="w-[33%] h-full max-[700px]:w-full max-[700px]:h-[50%]">

@@ -22,15 +22,15 @@ function FAQ()
  
     const handleOpen = (value) => setOpen(open === value ? 0 : value);
 
-    const AccordianStyle='p-4 border border-t-0 border-l-0 border-r-0 border-b-3 border-gray-700'
-    const AccordianHeaderStyle='text-white hover:text-[#9329FE] border-[#9328feaa]'
-    const AccordianBodyStyle='text-white text-md font-semibold p-2'
+    const AccordianStyle='p-4 border border-t-0 border-l-0 border-r-0 border-b-3 border-gray-700 max-md:p-2'
+    const AccordianHeaderStyle='text-white hover:text-[#9329FE] border-[#9328feaa] max-md:text-sm'
+    const AccordianBodyStyle='text-white text-md font-semibold p-2 max-md:text-sm'
 
     return(
     
         <div className='relative flex flex-col items-center justify-center w-full h-screen gap-3 p-3'>
         <p className='text-8xl text-white theme max-md:text-5xl'>FAQ</p>
-       <div className='z-10 w-3/4 mt-5 '>
+       <div className='z-10 w-3/4 mt-5 max-md:w-4/5 '>
     
         
        <Accordion open={open === 1} icon={<Icon id={1} open={open} />} className={AccordianStyle} data-aos='fade-up' data-aos-duration={250}> 
