@@ -15,6 +15,8 @@ function App() {
 
   return (
     <div className="min-h-screen scroll-smooth">
+
+
       {loading && <Loading />}
       <ChildComponent />
     </div>
