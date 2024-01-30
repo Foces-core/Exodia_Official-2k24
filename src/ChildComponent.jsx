@@ -11,6 +11,7 @@ import Culturals from "./Componets/Culturals.jsx";
 import Leftnav from "./Componets/Leftnav";
 import Footer from "./Componets/Footer";
 import Contact from "./pages/Contact/Contact.jsx";
+import Social from "./pages/Social.jsx";
 
 const ChildComponent = () => {
   return (
@@ -24,6 +25,7 @@ const ChildComponent = () => {
       <Mentors />
       <RegisterSection />
       <FAQ />
+      <Social />
       <Contact />
       <Leftnav />
       <Footer />
