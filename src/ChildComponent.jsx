@@ -1,5 +1,4 @@
 // ChildComponent.jsx
-
 import Topsect from "./Componets/Topsect";
 import Home from "./pages/Home/Home";
 import Stacks from "./pages/Stacks/Stacks";
@@ -15,7 +14,7 @@ import Contact from "./pages/Contact/Contact.jsx";
 
 const ChildComponent = () => {
   return (
-    <div>
+    <div className="min-h-screen scroll-smooth">
       <Topsect />
       <Home />
       <About />

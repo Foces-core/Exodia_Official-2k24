@@ -65,7 +65,7 @@ function Stacks() {
 
       {/*////////////// BOTTOM //////////// */}
       <div>
-        <img className="absolute top-[450px] left-40 scale-150 -z-10 max-md:top-52 left-7" src={stackbg} alt="" />
+        <img className="absolute top-[350px] left-40 scale-150 -z-10 max-md:top-52 left-7" src={stackbg} alt="stack-img" />
       </div>
     </div>
   );

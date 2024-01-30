@@ -13,30 +13,41 @@ export default function PopModel() {
   const cancelButtonRef = useRef(null);
   const [delays, setDelays] = useState([]);
   const [showImage, setShowImage] = useState([]);
+  const timeoutIds = useRef([]);
+
 
   useEffect(() => {
     if (stackData && stackData.Details && stackData.Details[stackName]) {
       let cumulativeDelay = 0;
       const newDelays = stackData.Details[stackName].map((item) => {
-        const delay = cumulativeDelay;
-        cumulativeDelay += item.length * 5 + 700; // Adjust the multiplier according to your typeSpeed
-        return delay;
+        cumulativeDelay += item.length * 5 + 500; // Adjust the multiplier according to your typeSpeed
+        return cumulativeDelay;
       });
       setDelays(newDelays);
       setShowImage(new Array(stackData.Details[stackName].length).fill(false));
+      
+      
     }
-  }, [stackData, stackName]);
+
+  }, [stackData, stackName,open]);
 
   useEffect(() => {
     delays.forEach((delay, index) => {
-      setTimeout(() => {
+      const id = setTimeout(() => {
         setShowImage((prevShowImage) => {
           const newShowImage = [...prevShowImage];
           newShowImage[index] = true;
           return newShowImage;
         });
       }, delay);
+      timeoutIds.current.push(id);
+      
     });
+
+
+    return () => {
+      timeoutIds.current.forEach((id) => clearTimeout(id));
+    };
   }, [delays]);
 
   return (
@@ -84,7 +95,7 @@ export default function PopModel() {
                         >
                           <p>Choose your adventure !</p>
                           <p
-                            onClick={() => setOpen(false)}
+                            onClick={() => {setOpen(false);reset();}}
                             className="cursor-pointer theme"
                           >
                             x
@@ -102,27 +113,26 @@ export default function PopModel() {
                             </p>
                           </div>
                         </div>
-                        <div className="w-2/3 p-5 mt-6 overflow-y-scroll text-white rounded-lg col h-3/4 no-scrollbar bg-neutral-950 max-sm:text-xs scroll-smooth max-[640px]:w-fit max-[640px]:p-3 max-[640px]:max-w-[85%]">
-                          {stackData &&
-                          stackData.Details &&
-                          stackData.Details[stackName] ? (
-                            stackData.Details[stackName].map((item, index) => (
-                              <div key={index} className="flex px-2 py-2 text-left gap-1">
-                                {showImage[index] && (
-                                  <img
-                                    className="max-sm:h-3"
-                                    src={forward}
-                                    alt=""
-                                  />
-                                )}
-                                <ReactTyped
-                                  strings={[item]}
-                                  typeSpeed={5}
-                                  startDelay={delays[index]}
-                                  showCursor={false}
-                                />
-                              </div>
-                            ))
+                        <div className="w-2/3 p-5 mt-6 overflow-y-scroll scrollbar-thin text-white rounded-lg col h-3/4 no-scrollbar bg-neutral-950 max-sm:text-xs scroll-smooth max-[640px]:w-fit max-[640px]:p-3 max-[640px]:max-w-[85%]">
+                          {stackData && stackData.Details && stackData.Details[stackName] ? (
+    stackData.Details[stackName].map((item, index) => (
+      <div key={index} className="flex gap-1 px-2 py-2 text-left">
+        {showImage[index] && (
+          <img
+            className="max-sm:h-3"
+            src={forward}
+            alt=""
+          />
+        )}
+        <ReactTyped
+          strings={[item]}
+          typeSpeed={5}
+          startDelay={delays[index]}
+          onComplete={() => handleTypedComplete(index)}
+          showCursor={false}
+        />
+      </div>
+    ))
                           ) : (
                             <p className="animate-pulse">$</p>
                           )}
@@ -134,7 +144,9 @@ export default function PopModel() {
                     <button
                       type="button"
                       className="inline-flex justify-center px-2 py-2 text-sm font-semibold text-white bg-red-600 border-none shadow-sm w-72 rounded-xl hover:bg-red-500 sm:ml-3 sm:w-28"
-                      onClick={() => setOpen(false)}
+                      onClick={() => {setOpen(false)
+                                        window.open("https://www.yepdesk.com/exodiacec", "_blank");
+                      }}
                     >
                       Register
                     </button>

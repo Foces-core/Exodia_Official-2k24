@@ -5,10 +5,10 @@ import xrtop from '../../assets/xs/xr-top.svg'
 import forums from '../../assets/forums.svg'
 import 'atropos/css'
 import Atropos from 'atropos/react'
-import { useCallback, useEffect } from 'react'
+// import { useCallback, useEffect } from 'react'
 import Counter from '../../Componets/Counter'
- import rallax from 'rallax.js'
-import rolly from 'rolly.js'
+//  import rallax from 'rallax.js'
+// import rolly from 'rolly.js'
 //import 'rolly.js/dist/rolly.min.css'
 
 
@@ -62,10 +62,10 @@ function Home() {
       </div>
       <div className='flex flex-col items-center w-full -mt-16 max-sm:mt-24'>
         <Counter/>
-      <button className='flex bg-red-700 w-72 h-10 rounded-lg justify-center items-center text-white text-lg font-bold mt-10 ease-in duration-100 hover:scale-105 max-sm:w-[90%] max-sm:mt-24'>Register</button>
+      
+       <button onClick={()=>{window.open("https://www.yepdesk.com/exodiacec", "_blank")}} className='flex bg-red-700 w-72 h-10 z-10 rounded-lg justify-center items-center text-white text-lg font-bold mt-10 ease-in duration-100 hover:scale-105 max-sm:w-[90%] max-sm:mt-24'>Register</button>
       </div>
-
-
+      {/* https://www.yepdesk.com/exodiacec */}
 
 
     </div>

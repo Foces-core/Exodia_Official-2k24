@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import {Link} from 'react-router-dom';
+
 
 function Leftnav() {
-  const sectionIds = ["Mentors", "Stacks","About" ,"Home"];
+  const sectionIds = ["Contact","Mentors", "Stacks", "Home"];
   const [activeSection, setActiveSection] = useState(sectionIds[0]);
 
   useEffect(() => {
@@ -45,11 +45,11 @@ function Leftnav() {
         ))}
       </div>
 
-      <div className="hidden  flex-row-reverse sticky z-30 px-4 bottom-6 w-[90%] h-10 left-[5%] text-white  gap-5 rounded-lg justify-center items-center right-4 backdrop-blur-sm bg-[#6C6C6C80] max-[768px]:flex">
+      <div className="hidden flex-row-reverse sticky z-30 px-4 bottom-6 w-[90%] h-10 left-[5%] text-white  gap-5 rounded-lg justify-center items-center right-4 backdrop-blur-sm bg-[#6C6C6C80] max-[768px]:flex">
         {sectionIds.map(id => (
           <p
             key={id}
-            className={`text-xl  max-[390px]:text-sm font-medium text-white font-Inter ${activeSection === id ? ' relative before:absolute before:w-full before:h-[0.35rem] before:bg-[#9329FE] before:z-0 before:-bottom-4 before:rounded-xl' : 'opacity-45'}`}
+            className={`text-xl  max-[350px]:text-sm font-medium text-white font-Inter  ${activeSection === id ? ' relative before:absolute before:w-full before:h-[0.35rem] before:bg-[#9329FE] before:z-0 before:-bottom-4 before:rounded-xl' : 'opacity-45'}`}
             ref={React.createRef()}
             onClick={() => document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })}
           >
