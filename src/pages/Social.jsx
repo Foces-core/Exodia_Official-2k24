@@ -10,7 +10,7 @@ function Social() {
             <div className=" bg-[#151515] w-full h-[35vh] flex flex-col justify-center items-center border-[#ff3a3a] border-[2px] rounded-xl z-10 ">
                 <p className="text-[#fa4343] text-4xl font-bold max-sm:text-2xl max-[700px]:text-3xl max-[470px]:text-lg">Eager to be the face of exodia ?</p>
                 <p className="text-[#ff4949] font-light text-2xl italic max-sm:text-xl max-[470px]:text-base ">become a campus ambassador now</p>
-                <a href="https://www.yepdesk.com/exodiacec" className="py-2 my-10 text-lg font-bold bg-white cursor-pointer px-14 rounded-2xl border hover:bg-[#1f1f1f] hover:border transition-all duration-150 hover:text-[#ff5555] hover:border-[#ff3a3a]">Register</a>
+                <a href="https://forms.gle/ZETgGpUEgji2n2AK8" className="py-2 my-10 text-lg font-bold bg-white cursor-pointer px-14 rounded-2xl border hover:bg-[#1f1f1f] hover:border transition-all duration-150 hover:text-[#ff5555] hover:border-[#ff3a3a]">Register</a>
             </div>
             {/* Design Bottom Section */}
             <div className="bg-[#ff3939] w-full h-[35vh] rounded-xl -z-10 absolute -bottom-3 -left-3"></div>
