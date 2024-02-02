@@ -10,10 +10,10 @@ ReactDOM.createRoot(document.getElementById('root')).render(
 <HelmetProvider>
     <App>
     <Helmet>
-    <title>Exodia 2024</title>
-    <meta name="description" content="Welcome to EXODIA- where Innovation meets Inspiration! Exodia is an all-Kerala event that brings together tech enthusiasts and creative minds to explore Artificial Intelligence (AI), Augmented Reality (AR), and Game Development. This immersive experience empowers attendees with innovative knowledge, hands-on workshops led by our esteemed mentors, and unparalleled networking opportunities. EXODIA is a joint effort by IEDC, FOCES, and MULEARN -the 3 leading forums of the College Of Engineering Chengannur. Taking place on February 17th and 18th at the prestigious CEC Campus, this extravaganza is a fusion of intellect, talent, and excitement. Join us at EXODIA, where you can fuel your passion for technology, connect with like-minded individuals, and stay at the forefront of the latest AI, AR, and Game Development advancements." />
-    <link rel="canonical" href="https://exodiacec.online/"/>
-    <meta name="keyword" content='exodia2024,cec,foces,iedc bootcamp,mulearn,ai,ar,game,hands-on,all kerala,event,2days,technical,worshops,college of engineering chengannur'/>
+    <title>Exodia &apos;24 - All Kerala Technical Gala</title>
+    <meta name="description" content="Exodia is an all-Kerala event that brings together tech enthusiasts and creative minds to explore Artificial Intelligence (AI), Augmented Reality (AR), and Game Development. EXODIA is a joint effort by IEDC, FOCES, and MULEARN -the 3 leading forums of the College Of Engineering Chengannur. Taking place on February 17th and 18th at the prestigious CEC Campus, Join us at EXODIA, where you can fuel your passion for technology, connect with like-minded individuals, and stay at the forefront of the latest AI, AR, and Game Development advancements." />
+    <link rel="canonical" href="https://www.exodiacec.online"/>
+    <meta name="keyword" content='exodia,exodia2024,cec,foces,iedc,bootcamp,mulearn,ai,ar,game,hands-on,all kerala,event,2days,technical,worshops,college-of-engineering-chengannur,culturals,music,band,chengannur,alappuzha'/>
   
   </Helmet>
     </App>
