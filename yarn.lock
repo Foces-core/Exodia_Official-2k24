@@ -2213,10 +2213,10 @@ rallax.js@^2.0.4:
   resolved "https://registry.yarnpkg.com/rallax.js/-/rallax.js-2.0.4.tgz#4b393d858a124770fe2703cd1566ebc7f75cbd25"
   integrity sha512-E0WiHrWrnoX4RU79xWP4SvTmgrrXIU3lILwFv7rkrt8r6sDtq+ZMELiLlgDsvY7GW/Ut78bsUIzP0JWDhMBzog==
 
-react-countup@^6.5.0:
-  version "6.5.0"
-  resolved "https://registry.yarnpkg.com/react-countup/-/react-countup-6.5.0.tgz#2671035ec5012ed8db097a79d08fa6f193e139d3"
-  integrity sha512-26JFHbUHsHxu8SetkJwWVIUEkaNnrj4P9msxNGC8tS4hGr1bngRzbwtJYOgXD2G/ItjaKJ3JfYKd85sw7qRVeA==
+react-countup@^6.5.3:
+  version "6.5.3"
+  resolved "https://registry.yarnpkg.com/react-countup/-/react-countup-6.5.3.tgz#e892aa3eab2d6ba9c3cdba30bf4ed6764826d848"
+  integrity sha512-udnqVQitxC7QWADSPDOxVWULkLvKUWrDapn5i53HE4DPRVgs+Y5rr4bo25qEl8jSh+0l2cToJgGMx+clxPM3+w==
   dependencies:
     countup.js "^2.8.0"
 
