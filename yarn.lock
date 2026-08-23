@@ -2207,10 +2207,10 @@ react-scrollspy-navigation@^1.0.3:
   resolved "https://registry.yarnpkg.com/react-scrollspy-navigation/-/react-scrollspy-navigation-1.0.3.tgz#a23204ab75241b53400120408810d479f8463596"
   integrity sha512-jziPhU2flmcfg4q+e2PQZUVXvZj1ES3iOeS5sBdHQJwTp51Yk2c0aQono+3nucpoPkCb5Hov1aZprWN8xXylmA==
 
-react-timer-hook@^3.0.7:
-  version "3.0.7"
-  resolved "https://registry.yarnpkg.com/react-timer-hook/-/react-timer-hook-3.0.7.tgz#ac42c43d0034b873cbf97b44eb34ccb2b11fe5e0"
-  integrity sha512-ATpNcU+PQRxxfNBPVqce2+REtjGAlwmfoNQfcEBMZFxPj0r3GYdKhyPHdStvqrejejEi0QvqaJZjy2lBlFvAsA==
+react-timer-hook@^4.0.6:
+  version "4.0.6"
+  resolved "https://registry.yarnpkg.com/react-timer-hook/-/react-timer-hook-4.0.6.tgz#65ebdf543aa3ef0210d63e685605ca1557248c90"
+  integrity sha512-pGW2OdoUXoujQ66bP1s1ZoN6KtU6WYifUOohkV9UmM6oLncdjieTJzO6qvqFeBTY208Hxg6FDUhFMX4ygH5XxQ==
 
 react-typed@^2.0.12:
   version "2.0.12"
