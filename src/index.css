@@ -3,7 +3,7 @@
 
 @font-face {
     font-family: 'Spin Cycle OT Regular';
-    src: url('/font/SpinCycleOTRegular.otf') format('truetype'),;
+    src: url('/font/SpinCycleOTRegular.otf') format('opentype');
   }
   
  .theme{
