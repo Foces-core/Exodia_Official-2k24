@@ -1,54 +1,46 @@
-import { Fragment, useRef, useEffect, useState } from "react";
+import { Fragment, useRef, useState } from "react";
 import { Dialog, Transition } from "@headlessui/react";
 import logo from "../assets/logo.svg";
 import forward from "../assets/forward.svg";
 import { useRecoilState, useRecoilValue } from "recoil";
 import { popup, stack, stackdetails } from "../../recoil";
 import { ReactTyped } from "react-typed";
+import PropTypes from "prop-types";
+
+function TypedDetails({ items }) {
+  const [completedItems, setCompletedItems] = useState([]);
+  const delays = items.map((_, index) =>
+    items.slice(0, index).reduce((delay, item) => delay + item.length * 5 + 500, 0),
+  );
+
+  return items.map((item, index) => (
+    <div key={`${index}-${item}`} className="flex gap-1 px-2 py-2 text-left">
+      {completedItems.includes(index) && <img className="max-sm:h-3" src={forward} alt="" />}
+      <ReactTyped
+        strings={[item]}
+        typeSpeed={5}
+        startDelay={delays[index]}
+        onComplete={() => {
+          setCompletedItems((completed) =>
+            completed.includes(index) ? completed : [...completed, index],
+          );
+        }}
+        showCursor={false}
+      />
+    </div>
+  ));
+}
+
+TypedDetails.propTypes = {
+  items: PropTypes.arrayOf(PropTypes.string).isRequired,
+};
 
 export default function PopModel() {
   const [open, setOpen] = useRecoilState(popup);
   const stackName = useRecoilValue(stack);
   const stackData = useRecoilValue(stackdetails);
   const cancelButtonRef = useRef(null);
-  const [delays, setDelays] = useState([]);
-  const [showImage, setShowImage] = useState([]);
-  const timeoutIds = useRef([]);
-
-
-  useEffect(() => {
-    if (stackData && stackData.Details && stackData.Details[stackName]) {
-      let cumulativeDelay = 0;
-      const newDelays = stackData.Details[stackName].map((item) => {
-        cumulativeDelay += item.length * 5 + 500; // Adjust the multiplier according to your typeSpeed
-        return cumulativeDelay;
-      });
-      setDelays(newDelays);
-      setShowImage(new Array(stackData.Details[stackName].length).fill(false));
-      
-      
-    }
-
-  }, [stackData, stackName,open]);
-
-  useEffect(() => {
-    delays.forEach((delay, index) => {
-      const id = setTimeout(() => {
-        setShowImage((prevShowImage) => {
-          const newShowImage = [...prevShowImage];
-          newShowImage[index] = true;
-          return newShowImage;
-        });
-      }, delay);
-      timeoutIds.current.push(id);
-      
-    });
-
-
-    return () => {
-      timeoutIds.current.forEach((id) => clearTimeout(id));
-    };
-  }, [delays]);
+  const stackItems = stackData?.Details?.[stackName];
 
   return (
     <Transition.Root show={open} as={Fragment}>
@@ -94,12 +86,15 @@ export default function PopModel() {
                           className="flex justify-between w-full px-3 text-base font-semibold leading-9 text-white"
                         >
                           <p>Choose your adventure !</p>
-                          <p
-                            onClick={() => {setOpen(false);reset();}}
+                          <button
+                            ref={cancelButtonRef}
+                            type="button"
+                            aria-label="Close stack details"
+                            onClick={() => setOpen(false)}
                             className="cursor-pointer theme"
                           >
-                            x
-                          </p>
+                            ×
+                          </button>
                         </Dialog.Title>
                       </div>
                       <div className="relative flex flex-col items-center w-full mt-2 h-96 bg-zinc-900">
@@ -114,25 +109,8 @@ export default function PopModel() {
                           </div>
                         </div>
                         <div className="w-2/3 p-5 mt-6 overflow-y-scroll scrollbar-thin text-white rounded-lg col h-3/4 no-scrollbar bg-neutral-950 max-sm:text-xs scroll-smooth max-[640px]:w-fit max-[640px]:p-3 max-[640px]:max-w-[85%]">
-                          {stackData && stackData.Details && stackData.Details[stackName] ? (
-    stackData.Details[stackName].map((item, index) => (
-      <div key={index} className="flex gap-1 px-2 py-2 text-left">
-        {showImage[index] && (
-          <img
-            className="max-sm:h-3"
-            src={forward}
-            alt=""
-          />
-        )}
-        <ReactTyped
-          strings={[item]}
-          typeSpeed={5}
-          startDelay={delays[index]}
-          onComplete={() => handleTypedComplete(index)}
-          showCursor={false}
-        />
-      </div>
-    ))
+                          {stackItems ? (
+                            <TypedDetails key={`${stackName}-${open}`} items={stackItems} />
                           ) : (
                             <p className="animate-pulse">$</p>
                           )}
@@ -144,8 +122,9 @@ export default function PopModel() {
                     <button
                       type="button"
                       className="inline-flex justify-center px-2 py-2 text-sm font-semibold text-white bg-red-600  shadow-sm w-72 rounded-xl hover:bg-red-500 sm:ml-3 sm:w-28"
-                      onClick={() => {setOpen(false)
-                                        window.open("https://www.yepdesk.com/exodiacec", "_blank");
+                      onClick={() => {
+                        setOpen(false);
+                        window.open("https://www.yepdesk.com/exodiacec", "_blank", "noopener,noreferrer");
                       }}
                     >
                       Register

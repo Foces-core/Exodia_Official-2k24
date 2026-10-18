@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 
+const sectionIds = ["Contact", "Mentors", "Stacks", "Home"];
 
 function Leftnav() {
-  const sectionIds = ["Contact","Mentors", "Stacks", "Home"];
   const [activeSection, setActiveSection] = useState(sectionIds[0]);
 
   useEffect(() => {
@@ -22,13 +22,8 @@ function Leftnav() {
       if (element) observer.observe(element);
     });
 
-    return () => {
-      sectionIds.forEach(id => {
-        const element = document.getElementById(id);
-        if (element) observer.unobserve(element);
-      });
-    };
-  }, [sectionIds]);
+    return () => observer.disconnect();
+  }, []);
 
   return (
       <>
@@ -37,7 +32,6 @@ function Leftnav() {
           <p
             key={id}
             className={`hover:before:bg-[#9329FE]  relative before:absolute before:w-full before:h-[0.35rem]  before:-bottom-1 before:rounded-xl  ${activeSection === id ? 'opacity-100  before:bg-[#9329FE]' : 'opacity-45 before:bg-transparent'}`}
-            ref={React.createRef()}
             onClick={() => document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })}
           >
             {id}
@@ -50,7 +44,6 @@ function Leftnav() {
           <p
             key={id}
             className={`text-xl  max-[350px]:text-sm font-medium text-white font-Inter  ${activeSection === id ? ' relative before:absolute before:w-full before:h-[0.35rem] before:bg-[#9329FE] before:z-0 before:-bottom-4 before:rounded-xl' : 'opacity-45'}`}
-            ref={React.createRef()}
             onClick={() => document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })}
           >
             {id}

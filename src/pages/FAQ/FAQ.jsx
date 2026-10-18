@@ -1,5 +1,6 @@
 import {Accordion,AccordionHeader,AccordionBody} from '@material-tailwind/react'
 import React from 'react'
+import PropTypes from 'prop-types'
 import FAQimg from '../../assets/Faq.svg'
 
 function Icon({ id, open }) {
@@ -16,6 +17,12 @@ function Icon({ id, open }) {
       </svg>
     );
   }
+
+Icon.propTypes = {
+  id: PropTypes.number.isRequired,
+  open: PropTypes.number.isRequired,
+}
+
 function FAQ()
 {
     const [open, setOpen] = React.useState(0);
