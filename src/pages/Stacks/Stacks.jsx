@@ -7,7 +7,6 @@ import { stackdetails } from '../../../recoil';
 import Carousel from '../../Componets/Carousel';
 import ProgressBar from '../../Componets/ProgressBar';
 import Folder from '../../Componets/Folder';
-import { ReactTyped } from 'react-typed';
 
 function Stacks() {
   const [stackData, setStackData] = useRecoilState(stackdetails);
@@ -29,7 +28,7 @@ function Stacks() {
     return () => {
       window.removeEventListener('resize', handleResize);
     };
-  }, []); // Empty dependency array ensures that this effect runs only once on mount
+  }, [setStackData]);
 
   return (
     <div className="relative z-0 flex items-center justify-center w-full h-screen overflow-hidden" id="Stacks">

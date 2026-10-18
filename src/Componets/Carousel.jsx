@@ -1,4 +1,4 @@
-import React, { useRef, memo } from 'react';
+import { useRef, memo } from 'react';
 import PropTypes from 'prop-types';
 import OwlCarousel from 'react-owl-carousel';  
 import 'owl.carousel/dist/assets/owl.carousel.css';  

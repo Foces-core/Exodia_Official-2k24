@@ -1,13 +1,14 @@
 import { useRecoilState } from "recoil"
+import PropTypes from "prop-types"
 import coverback from "../assets/folder/coverBack.svg"
 import coverfront from "../assets/folder/coverFront.svg"
 import file from "../assets/folder/file.svg"
 import { popup, stack } from "../../recoil"
-function Folder(props) {
-  const [open, setOpen] = useRecoilState(popup)
- const [stackName, setStackName] = useRecoilState(stack)
+function Folder({ name }) {
+  const [, setOpen] = useRecoilState(popup)
+  const [, setStackName] = useRecoilState(stack)
   const Setvalues = () => {
-    setStackName(props.name)
+    setStackName(name)
     setOpen(true)
   }
 
@@ -19,10 +20,14 @@ function Folder(props) {
     <img className="absolute z-20 transition-transform origin-bottom-right transform scale-90 group-hover:rotate-12 max-md:scale-90" src={file} alt="file" />
     <img className="z-30 transition-transform transform group-hover:scale-110 max-md:scale-10" src={coverfront} alt="file" />
       </div>
-  <p className="text-white text-center font-semibold max-sm:text-[10px]">{props.name}</p>
+  <p className="text-white text-center font-semibold max-sm:text-[10px]">{name}</p>
   </div>
   
   )
+}
+
+Folder.propTypes = {
+  name: PropTypes.string.isRequired,
 }
 
 export default Folder

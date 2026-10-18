@@ -1,10 +1,11 @@
 import linkedinimg from "../assets/Mentors/linkedin.svg";
 import { useEffect, useState } from "react";
+import PropTypes from "prop-types";
 
 function MentorCard( props)
 {
  
-    const [isMobile, setIsMobile] = useState(false);
+    const [isMobile, setIsMobile] = useState(() => window.innerWidth <= 767);
     
     useEffect(() => {
         const handleResize = () => {
@@ -19,7 +20,6 @@ function MentorCard( props)
         
 
 
-    const load=['-right-12']
     return(
         <>
         <div className={"relative flex items-center z-10 w-[41vw] h-[25vh] max-[768px]:justify-normal max-[768px]:w-fit max-[550px]:h-[20vh] max-[428px]:w-full border border-[#9329FE] rounded-[17px] bg-black "+((props.Index%2==0 && !isMobile)?"justify-normal":"justify-end")} data-aos='fade-up'>
@@ -46,5 +46,14 @@ function MentorCard( props)
         </>
     );
 }
+
+MentorCard.propTypes = {
+    Index: PropTypes.number.isRequired,
+    Image: PropTypes.string.isRequired,
+    Name: PropTypes.string.isRequired,
+    Desc: PropTypes.string.isRequired,
+    link: PropTypes.string.isRequired,
+    Topic: PropTypes.string.isRequired,
+};
 
 export default MentorCard;

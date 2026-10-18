@@ -18,10 +18,10 @@ jobs:
       - uses: actions/checkout@v7
       - uses: actions/setup-node@v7
         with:
-          node-version: 20
+          node-version: 22
           cache: npm
       - run: npm install
       - run: npm run build --if-present
-      - name: Lint (non-blocking)
-        run: npm run lint --if-present || true
+      - name: Lint
+        run: npm run lint --if-present
       - run: npm test --if-present
